@@ -1,0 +1,4 @@
+nimTitle	smelly	smelly.html	module src/smelly		0
+nim	XmlNode	smelly.html#XmlNode	object XmlNode		5
+nim	parseXml	smelly.html#parseXml,string	proc parseXml(input: string): XmlNode		29
+nim	dump	smelly.html#dump,XmlNode,string	proc dump(root: XmlNode; input: string): string		101
