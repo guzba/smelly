@@ -10,3 +10,6 @@ nimcache
 *.ilk
 *.out
 .*
+dump.txt
+*.dSYM/
+*.js
