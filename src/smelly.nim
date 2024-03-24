@@ -1,14 +1,16 @@
-import std/strutils, std/options
+import std/strutils, std/options, unicody
 
 # https://www.w3.org/TR/xml/
 
-type XmlNode* = object
-  startTag: (int, int)
-  endTag: Option[(int, int)]
+type
 
-  # either have kids or a value
-  inner: Option[(int, int)]
-  kids: seq[XmlNode]
+  XmlNode* = object
+    startTag: (int, int)
+    endTag: Option[(int, int)]
+
+    # either have kids or a value
+    inner: Option[(int, int)]
+    kids: seq[XmlNode]
 
 
 
@@ -27,10 +29,22 @@ proc skipWhitespace(input: string, i: var int) =
 
 
 proc parseXml*(input: string): XmlNode =
+  let invalidAt = validateUtf8(input)
+  if invalidAt != -1:
+    error("Invalid UTF-8 character at " & $invalidAt)
+
+
+
+
+  # optional prologue, something like <?xml version="1.0" encoding="UTF-8"?>
+  # root element
+  # optional pis <?something ?>, optional whitespace
+
   var
     i: int
     stack: seq[XmlNode]
     root: Option[XmlNode]
+
   while true:
     skipWhitespace(input, i)
 
