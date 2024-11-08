@@ -1,0 +1,12 @@
+nimTitle	xmlattributes	smelly/xmlattributes.html	module src/smelly/xmlattributes		0
+nim	XmlAttributes	smelly/xmlattributes.html#XmlAttributes	type XmlAttributes		3
+nim	toBase	smelly/xmlattributes.html#toBase.c,XmlAttributes	converter toBase(params: var XmlAttributes): var seq[(string, string)]		5
+nim	toBase	smelly/xmlattributes.html#toBase.c,XmlAttributes_2	converter toBase(params: XmlAttributes): lent seq[(string, string)]		9
+nim	`[]`	smelly/xmlattributes.html#[],XmlAttributes,string	proc `[]`(attributes: XmlAttributes; key: string): string		15
+nim	`[]=`	smelly/xmlattributes.html#[]=,XmlAttributes,string,string	proc `[]=`(attributes: var XmlAttributes; key, value: string)		23
+nim	contains	smelly/xmlattributes.html#contains,XmlAttributes,string	proc contains(attributes: XmlAttributes; key: string): bool		31
+nim	add	smelly/xmlattributes.html#add,XmlAttributes,XmlAttributes	proc add(attributes: var XmlAttributes; params: XmlAttributes)		37
+nim	getOrDefault	smelly/xmlattributes.html#getOrDefault,XmlAttributes,string,string	proc getOrDefault(attributes: XmlAttributes; key, default: string): string		41
+nim	`$`	smelly/xmlattributes.html#$,XmlAttributes	proc `$`(attributes: XmlAttributes): string		44
+nim	emptyXmlAttributes	smelly/xmlattributes.html#emptyXmlAttributes	proc emptyXmlAttributes(): XmlAttributes		47
+nimgrp	tobase	smelly/xmlattributes.html#toBase-converters-all	converter		5
