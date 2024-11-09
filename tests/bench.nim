@@ -1,10 +1,11 @@
 import benchy, smelly
 
-let feed = readFile("tests/data/feed.xml")
+let s = readFile("tests/data/feed.xml")
+# let s = readFile("tests/data/apkmirror.xml")
 
 timeIt "smelly":
-  doAssert parseXml(feed) != nil
+  doAssert parseXml(s) != nil
 
-# from std/xmlparser as std import nil
-# timeIt "std/xmlparser":
-#   doAssert std.parseXml(feed) != nil
+from std/xmlparser as std import nil
+timeIt "std/xmlparser":
+  doAssert std.parseXml(s) != nil
