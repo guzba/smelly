@@ -11,6 +11,8 @@ const
   ampEntity = "amp"
   aposEntity = "apos"
   quotEntity = "quot"
+  cdataStart = "<![CDATA["
+  cdataEnd = "]]>"
 
 type XmlElement* = ref object
   tag*: string
@@ -139,6 +141,24 @@ proc decodeCharData(input: string, start, len: int): string =
     else:
       result.add input[offset]
       inc offset
+
+proc readCdata(input: string, i: var int): string =
+  if i + 9 > input.len:
+    eof()
+  elif not equalMem(input[i].addr, cdataStart.cstring, 9):
+    badXml(input, i)
+
+  i += cdataStart.len
+
+  let e = input.find(cdataEnd, start = i)
+  if e == -1:
+    eof()
+
+  let len = e - i
+  result.setLen(len)
+  copyMem(result.cstring, input[i].addr, len)
+
+  i = e + cdataEnd.len
 
 proc readValue(input: string, i: var int): string =
   if i >= input.len:
@@ -394,7 +414,9 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
       eof()
 
     if input[i] == '<':
-      if input[i + 1] == '/':
+      let next = input[i + 1]
+      case next:
+      of '/':
         if i + tag.len + 2 >= input.len:
           eof()
         elif startsWithAsciiIgnoreCase(
@@ -410,10 +432,17 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
           )
         else:
           badXml(input, i + 2)
-      elif input[i + 1] == '?':
+      of '?':
         skipProcessingInstruction(input, i)
-      elif input[i + 1] == '!':
-        skipComment(input, i)
+      of '!':
+        if i + 2 > input.len:
+          eof()
+        if input[i + 2] == '[':
+          if content != "":
+            badXml(input, i)
+          content = readCdata(input, i)
+        else:
+          skipComment(input, i)
       else:
         children.add(parseElement(input, i, depth + 1))
     else:

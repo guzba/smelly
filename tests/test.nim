@@ -1,6 +1,6 @@
 import smelly
 
-echo parseXml(readFile("tests/data/feed.xml"))
+echo parseXml(readFile("tests/data/apkmirror.xml"))
 
 
 # <?xml version="1.0"?>

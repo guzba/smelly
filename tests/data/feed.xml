@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pushbullet Blog</title>
+        <description>Keep up on Pushbullet news</description>
+        <link>https://blog.pushbullet.com</link>
+        <atom:link href="https://blog.pushbullet.com/feed.xml" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>How we became the world&#39;s foremost expert on Google Play Store policy violations</title>
+                <description>&lt;p&gt;Starting in 2020, we at Pushbullet began receiving more and more Play Store policy violation notifications from Google. At first the violation notifications seemed plausible, if a bit abrasive. At this point though, I’m pretty sure we’re being picked on by an AI. We’ll see what you think after you hear our story.&lt;/p&gt;
+
+&lt;h4 id=&quot;lets-get-some-basics-out-of-the-way&quot;&gt;Let’s get some basics out of the way&lt;/h4&gt;
+
+&lt;p&gt;To start off, it is very reasonable for you to think we must be doing some pretty horrible things if we are receiving so many policy violation notifications from Google. To address this, I’m going to show you that we are not only not doing horrible things, we are often not doing anything at all.&lt;/p&gt;
+
+&lt;p&gt;Next, I want to establish some quick facts about Pushbullet. 1) our app has zero advertising in it, 2) we do not share any data with third parties and 3) we have end-to-end encryption available for users using our optional features that are more sensitive. This is basically the dream for users of a (mostly) free service.&lt;/p&gt;
+
+&lt;p&gt;With that out of the way, let’s dive in to just how we’ve become such experts on Play Store policy violation notifications and how we’re still on the Play Store today.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-is-a-play-store-policy-violation-notification&quot;&gt;What is a Play Store policy violation notification?&lt;/h4&gt;
+
+&lt;p&gt;A Play Store policy violation notification is an email that informs you that your app is going to be removed from the Play Store in 7 days unless you can address the policy violation. Here is what they look like:&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/example.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;As you can see above, the violation and how to resolve it are very clearly communicated. After all, the only thing you need to do is add a valid Privacy Policy to your app and Play Store listing along with prominent in-app disclosure. Couldn’t be easier.&lt;/p&gt;
+
+&lt;p&gt;Unless you already have those things, as we did. If that is the case, then the guessing game begins. Here is where we can share our experience and wisdom from years of guessing that Google wants.&lt;/p&gt;
+
+&lt;h4 id=&quot;so-how-do-you-survive-for-years-while-receiving-all-sorts-of-policy-violations-from-google&quot;&gt;So, how do you survive for years while receiving all sorts of policy violations from Google?&lt;/h4&gt;
+
+&lt;p&gt;To answer this question, I’m going to analyze each of the violation notifications we’ve received the past couple of years and share how we addressed them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;June 9, 2020, the beginning&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/365.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The first thing to know is that this notification was received out of the blue, not as part of a review to publish an update. I just woke up one day to this notification.&lt;/p&gt;
+
+&lt;p&gt;This was the first time Google informed us of Privacy Policy and disclosure issues so we made a good faith effort to resolve this (before is on the left, after on the right):&lt;/p&gt;
+
+&lt;table style=&quot;margin:26px&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;/images/privacy_policy/before0.png&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+		&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;/images/privacy_policy/after0.png&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;/images/privacy_policy/before1.png&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+		&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;/images/privacy_policy/after1.png&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Notice that we ensure a clear disclosure everywhere and link to link to the Privacy Policy during our onboarding flow. Exactly what Google wanted and we felt this was reasonably well done.&lt;/p&gt;
+
+&lt;p&gt;We submitted the update, it was approved, and we assumed we had resolved this issue.&lt;/p&gt;
+
+&lt;p&gt;(We were very wrong)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;July 7, 2021, around 1 year later&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I attempted to publish a small update to our app and received this violation notice in response:&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/373.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I guess something is still wrong with our disclosures or Privacy Policy? I took a look and noticed we didn’t have a link to our Privacy Policy on the screen where users can enable / disable SMS sync. I had only added a link to the screen during the onboarding flow. Such an easy mistake to make, and easy to fix.&lt;/p&gt;
+
+&lt;p&gt;I added the links to the SMS settings screen, submitted another update, and this time it was approved without further issue. This Privacy Policy issue must be done now. Right?&lt;/p&gt;
+
+&lt;p&gt;Nope.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;July 21, 2021, three weeks later&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Again, when attempting to publish a small update I received this:&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/379.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;float:right;margin-top:0px;&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/in-app-policy.png&quot; style=&quot;max-width:320px&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Hmmmmmm. Ok. At this point I have no idea what the real issue is. After thinking up possibilities, I come to the conclusion that I will prepare a specific Privacy Policy page for our SMS sync feature and have it stored locally in the APK so there is no potential for networking to cause trouble:&lt;/p&gt;
+
+&lt;p&gt;I submitted another update with this change and it was approved. Finally cracked the code and got this fixed forever!&lt;/p&gt;
+
+&lt;p&gt;Wrong.&lt;/p&gt;
+
+&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;February 12, 2022, six months later&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Out of the blue I once again woke up to a policy violation notification from Google. No recent app updates or anything like that. Upon reading the policy issue it hit me: this may never end.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/380.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I am clearly not making Google happy. I really really need to make Google happy. Let’s try another idea for how to make Google happy.&lt;/p&gt;
+
+&lt;p&gt;This time I moved the link to our Privacy Policy up to the top of the screens and added a dialog where the user must manually confirm the data upload disclosure before we allow them to enable the feature:&lt;/p&gt;
+
+&lt;table style=&quot;margin:26px&quot;&gt;
+	&lt;tr&gt;
+		&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;/images/privacy_policy/after2.png&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+		&lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;/images/privacy_policy/after3.png&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Surely, surely this must be good enough? So I submitted another update with these changes, and praise be it was approved. I must be good at this guessing game!&lt;/p&gt;
+
+&lt;p&gt;(You can laugh at me)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;May 15, 2022, three months later&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Is it reasonable to be getting a little frustrated at this point? I hope so. I have been genuinely trying to make Google happy but this damned Privacy Policy appears to be beyond my capacity.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/381.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In my head I’m composing epic rants about denial-of-service attacks against humans due to the asymmetric effort of responding to a violation notification versus issuing them. But nobody has time to write that. Instead I get back to guessing what Google wants from me.&lt;/p&gt;
+
+&lt;p&gt;I’ll admit, this time I was feeling a little petulant with my change. I just increased the size of the in-app text for the Privacy Policy link and re-submitted.&lt;/p&gt;
+
+&lt;p&gt;Approved! I don’t like this world very much.&lt;/p&gt;
+
+&lt;p&gt;(Decaying sanity)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;October 2, 2022, 4 months later&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Oh my god.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/387.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;But there is beacon of hope this time! If you really really really look, the issue is more clearly articulated. The issue appears to be that the Privacy Policy I link to in our Play Store configuration does not have new SMS sync section that I added to the in-app Privacy Policy.&lt;/p&gt;
+
+&lt;p&gt;I thought that since our SMS sync feature can only be enabled in-app, the focused in-app policy would be great since it focuses on just that specific feature.&lt;/p&gt;
+
+&lt;p&gt;This was a horrible horrible terrible idea and I should feel bad for having it.&lt;/p&gt;
+
+&lt;p&gt;I put together a new policy that kind of merges all the things and updated the Privacy Policy link in our Play Store settings. This didn’t need any in-app changes but the violation notification’s instructions clearly say I must update my app so I proceed to do that.&lt;/p&gt;
+
+&lt;p&gt;Approved.&lt;/p&gt;
+
+&lt;p&gt;(Weary beyond words)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;October 26, 2022, three weeks later (yesterday)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;img src=&quot;/images/privacy_policy/388.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;At least this one is a little different? I think all I need to do is add a few words explaining that when you select a Google account to sign in to our app, that email address is sent to our servers. Should be easy but, in all sincerity, does this seem like a reasonable chain of events to you?&lt;/p&gt;
+
+&lt;p&gt;Somehow our app was perfectly acceptable to Google THREE WEEKS AGO. But now, today, we must drop everything and immediately tweak our app-linked Privacy Policy or our app and company is shot in the head by Google.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-you-and-i-are-up-against&quot;&gt;What you and I are up against&lt;/h4&gt;
+
+&lt;p&gt;Google has always loved automated enforcement. They’ve been doing it since the dawn of time. There is no point in complaining. Instead, let’s try to understand how what is happening and what we can do to survive.&lt;/p&gt;
+
+&lt;p&gt;To enforce Google’s extensive set of policies automatically, Google’s tool of choice is to employ machine learning / AI.&lt;/p&gt;
+
+&lt;p&gt;AI is an amazing tool for Google. They can train a model to identify apps that appear to not be in compliance with a policy and then check every single app in the Play Store constantly.&lt;/p&gt;
+
+&lt;p&gt;For us as app developers, this has two issues. First, there will be false positives. It is possible we really don’t have any violation. Second, as more and more policies have their enforcement automated, not only does the chance of receiving a false positive violation notification go up, but also trivial policy “violations” suddenly become enforced with an iron fist.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-mental-model-to-embrace-to-maintain-your-sanity&quot;&gt;The mental model to embrace to maintain your sanity&lt;/h4&gt;
+
+&lt;p&gt;We believe the first thing you should do is internalize that policy enforcement at Google is entirely mechanized.&lt;/p&gt;
+
+&lt;p&gt;Your app did not receive a deliberate analysis by a human leading to the violation notification. There is no one to debate. There is no opinion at all. Your app simply didn’t look enough like the AI’s training data.&lt;/p&gt;
+
+&lt;p&gt;This means that when you receive a violation notification and your first thought is to try to speak with someone, you are already thinking about things the wrong way.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-correct-response-to-a-policy-violation-notification&quot;&gt;The correct response to a policy violation notification&lt;/h4&gt;
+
+&lt;p&gt;Now that you know you’re up against an automated policy enforcement AI, your goal is to look as much as possible like the training data. Unfortunately, this can be easier said than done since we do not have access to the training data.&lt;/p&gt;
+
+&lt;p&gt;All is not lost, however. You have actionable info in the simple fact that what your app looks like now is not acceptable. Identify a set of changes you think may be viable solutions, then simply change even more things that would generally appear to bring you even further into compliance. The more things you change, the more likely one of them is going to get you the green light.&lt;/p&gt;
+
+&lt;p&gt;For now.&lt;/p&gt;
+
+&lt;h4 id=&quot;youre-only-in-compliance-for-now&quot;&gt;You’re only in compliance for now&lt;/h4&gt;
+
+&lt;p&gt;A mistake I made repeatedly is thinking once my update was approved, we were good until I updated again. This will never be the case.&lt;/p&gt;
+
+&lt;p&gt;New policy enforcement AIs are being trained all the time and existing ones are being tweaked. I think there’s little to do but accept that fending off policy enforcement AIs is going to be a cost of doing business for apps on the Play Store.&lt;/p&gt;
+
+&lt;h4 id=&quot;action-required-your-app-is-not-compliant-with-google-play-policies&quot;&gt;Action Required: Your app is not compliant with Google Play Policies&lt;/h4&gt;
+
+&lt;p&gt;I know we’ll be receiving more of these emails in the future. In the end, as long as our updates get approved, the notices can be thought of as something like a modern nuisance.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, if our updates stop getting approved, our inability to guess what Google needs us to do will result the removal of our app from the Play Store and the death of our company which will be a bit of a bummer.&lt;/p&gt;
+
+&lt;p&gt;For now we plan to make continue making changes to our app and submitting updates. Ideally our changes will continue being found acceptable and we can put this and future notices behind us.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;
+    &lt;a href=&quot;https://theartbutton.ai/image/hLZ6ElrfGaziM7tQl6Pu5F86jNsgOEVx&quot;&gt;
+    	&lt;img src=&quot;https://f004.backblazeb2.com/file/theartbutton-generated/v2/images/hLZ6ElrfGaziM7tQl6Pu5F86jNsgOEVx.jpeg&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+</description>
+                <pubDate>Thu, 27 Oct 2022 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2022/10/27/how-we-became-the-worlds-foremost-expert-on-google-play-store-policy-violations</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2022/10/27/how-we-became-the-worlds-foremost-expert-on-google-play-store-policy-violations</guid>
+            </item>
+        
+            <item>
+                <title>Closing The Portal App</title>
+                <description>&lt;p class=&quot;center&quot; style=&quot;overflow:hidden;padding-bottom:10px;&quot;&gt;
+    &lt;img src=&quot;/images/portal/splash.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.pushbullet.com/2015/06/16/introducing-portal/&quot;&gt;Portal&lt;/a&gt; was a passion project that we built to experiment with other ways of moving data between phones and computers. We built the slickest app we could and have continued to support the app, site and server for over 6 years now.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, over 6 years later, I’m now writing this post because many things have changed and the time has come to close Portal.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Important: The Pushbullet app is not affected by this announcement.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;why-close-portal&quot;&gt;Why close Portal?&lt;/h3&gt;
+
+&lt;p&gt;We are closing Portal because Google has made changes to both Android and Chrome that prevent Portal from working in the way we built it to work.&lt;/p&gt;
+
+&lt;h3 id=&quot;changes-to-android&quot;&gt;Changes to Android&lt;/h3&gt;
+
+&lt;p&gt;We chose to have Portal put files into the shared storage on your phone so other apps could have access to the files after they were transferred. This played very nicely with other apps, making interactions possible just like on a regular computer. Let’s say you had a game console emulator installed, you could use Portal to drop a bunch of ROMs onto your phone and the emulator was able to find them. The same was true for playing video files, etc.&lt;/p&gt;
+
+&lt;p&gt;Android has since moved away from shared storage and all apps will be required to use &lt;a href=&quot;https://developer.android.com/training/data-storage#scoped-storage&quot;&gt;Scoped Storage&lt;/a&gt; in just a couple months. Our philosophy of enabling apps to easily interact with files no longer fits the direction Android has taken.&lt;/p&gt;
+
+&lt;h3 id=&quot;changes-to-chrome&quot;&gt;Changes to Chrome&lt;/h3&gt;
+
+&lt;p&gt;Starting with Chrome 94, &lt;a href=&quot;https://developer.chrome.com/blog/private-network-access-update/&quot;&gt;Chrome no longer allows HTTP requests to local IP addresses&lt;/a&gt;. Since Portal worked by accessing a local server running on your phone to do all file transfers locally over WiFi, this means Portal no longer works for anyone using Chrome. Since Chrome and Chromium variants have overwhelming browser dominance, this means Portal will soon no longer work for the vast majority of people.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-final-details&quot;&gt;Some final details&lt;/h3&gt;
+
+&lt;p&gt;We will be shutting down Portal on Friday, October 8th. We have already unpublished the Portal Android app.&lt;/p&gt;
+
+&lt;p&gt;Thanks to everyone that used Portal over the years!&lt;/p&gt;
+</description>
+                <pubDate>Mon, 04 Oct 2021 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2021/10/04/closing-the-portal-app</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2021/10/04/closing-the-portal-app</guid>
+            </item>
+        
+            <item>
+                <title>An Update For Pushbullet Facebook Login Users</title>
+                <description>&lt;p&gt;&lt;strong&gt;For more context on this issue, take a look at &lt;a href=&quot;/2021/05/03/notice-to-pushbullet-facebook-login-users/&quot;&gt;our previous post&lt;/a&gt; for more information about Facebook’s unexpected blocking of Pushbullet.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Unexpectedly losing access to your Pushbullet account due Facebook Login being blocked is very frustrating for many Pushbullet users (and for us at Pushbullet). To help reduce the stress and inconvenience, we’ve been working to enable a smooth transition so affected users can continue to access their Pushbullet account.&lt;/p&gt;
+
+&lt;p&gt;While working through this, our top priority is ensuring we continue to maintain the security of the affected Pushbullet accounts. While we don’t have a perfect solution for all possible situations just yet, I wanted to share some updates and straightforward ways to continue accessing a Pushbullet account without Facebook Login.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Option #1: Use a Google account with the same email address.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Many people have one main email address they use to log in to many sites. Very often this is an @gmail.com email, so this option may work great for many affected users.&lt;/p&gt;
+
+&lt;p&gt;If you have a Google account set up for the email address you use to log in on Facebook, you can continue accessing the same Pushbullet account by using Google to sign in intead of Facebook.&lt;/p&gt;
+
+&lt;p&gt;Wondering what email address your Facebook account uses? You can check this on your &lt;a href=&quot;https://www.facebook.com/settings/?tab=account&quot;&gt;Facebook Account’s settings page here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Option #2: Migrate to Google sign in and a new Pushbullet account.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If your main use of Pushbullet is for SMS sync and Notification Mirroring, switching to a new Pushbullet account is actually a very easy option. You can make the switch by simply signing out of our app and website, then sign in using the Google account you’d like to start using.&lt;/p&gt;
+
+&lt;p&gt;This is not a great option for those that have valuable files or push history in their current Pushbullet account. In this case, Option #1 is a better idea if it is possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;These options don’t cover everyone, but they give some immediate options to many of you affected by the Facebook Login block.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We hope this helps provide some helpful guidance to many of you wondering how to best continue accessing a Pushbullet account without Facebook Login.&lt;/p&gt;
+
+&lt;p&gt;For those whom are not served well by these options, stay tuned for another update.&lt;/p&gt;
+</description>
+                <pubDate>Thu, 20 May 2021 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2021/05/20/an-update-for-pushbullet-facebook-login-users</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2021/05/20/an-update-for-pushbullet-facebook-login-users</guid>
+            </item>
+        
+            <item>
+                <title>Notice to Pushbullet Facebook Login Users</title>
+                <description>&lt;p&gt;&lt;strong&gt;Facebook has blocked pushbullet.com, preventing Facebook Login from working for Pushbullet users. We’re working to remove Facebook Login but this will take a little bit.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It was recently reported to us by a Pushbullet user that Facebook Login is no longer working on &lt;a href=&quot;https://www.pushbullet.com&quot;&gt;pushbullet.com&lt;/a&gt;. After doing some investigating, we have learned that Facebook has blocked the Pushbullet domain (pushbullet.com) as “malicious and/or abusive”:&lt;/p&gt;
+
+&lt;p style=&quot;text-align:center;&quot;&gt;
+    &lt;img src=&quot;/images/facebook_login_ai/malicous.png&quot; height=&quot;150&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Further research unfortunately did not turn up any additional info, simply stating that pushbullet.com does not &lt;a href=&quot;/images/facebook_login_ai/community_standards.png&quot;&gt;meet Facebook’s Community Standards&lt;/a&gt;. We have not received any communication from Facebook.&lt;/p&gt;
+
+&lt;p&gt;We have reported the issue, but Facebook specifically states that “we aren’t able to review individual reports” so it is unfortunately not likely this will result in the issue being addressed.&lt;/p&gt;
+
+&lt;p&gt;It is our belief that pushbullet.com has been incorrectly blacklisted by an automated process at Facebook. There is no process to correct this that we have found.&lt;/p&gt;
+
+&lt;p&gt;Currently Facebook Login is only blocked on the Pushbullet website. Facebook Login in the Pushbullet Android app continues to work as of today so Facebook Login users are still able to access their accounts for the time being.&lt;/p&gt;
+
+&lt;p&gt;To ensure Pushbullet Facebook Login users can maintain access to their accounts going forward, we’re working to remove Facebook Login and set up an alternative. More updates on this to come.&lt;/p&gt;
+</description>
+                <pubDate>Mon, 03 May 2021 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2021/05/03/notice-to-pushbullet-facebook-login-users</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2021/05/03/notice-to-pushbullet-facebook-login-users</guid>
+            </item>
+        
+            <item>
+                <title>Updating Our Chrome Extension After Our Google Scare</title>
+                <description>&lt;p&gt;&lt;strong&gt;Three weeks ago &lt;a href=&quot;https://blog.pushbullet.com/2020/05/13/lets-guess-what-google-requires-in-14-days-or-they-kill-our-extension/&quot;&gt;Google was close to removing our Chrome extension&lt;/a&gt; from the Chrome Web Store. Fortunately things &lt;a href=&quot;https://blog.pushbullet.com/2020/05/15/our-extension-is-safe/&quot;&gt;ended up working out&lt;/a&gt;. Not fun though!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To meet Google’s requirements and stay in the Chrome Web Store we needed to remove a few permissions from our extension. It has become clear over the past few weeks, however, that those permissions enabled our extension to work better than it does now without them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Here’s our challenge: make our extension work for you as well as it did before all while continuing to require less permissions.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The permissions we removed while trying to get our extension approved were &lt;b&gt;tabs&lt;/b&gt;, &lt;b&gt;http://*/*&lt;/b&gt; and &lt;b&gt;https://*/*&lt;/b&gt;. These permissions grant access to private information and can be misused. In our case, however, they are required to enable some valuable functionality:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;b&gt;tabs&lt;/b&gt; permission lets extensions see what tabs are open. Pushbullet uses this permission to avoid opening new tabs for websites that are already open when &lt;a href=&quot;/2013/11/12/real-time-notification-mirroring-from-android-to-your-computer/&quot;&gt;mirrored notifications&lt;/a&gt; are clicked.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;b&gt;http://*/*&lt;/b&gt; and &lt;b&gt;https://*/*&lt;/b&gt; permissions grant extensions access to data on all webpages. The Pushbullet extension uses this permission to be able to push images and files from websites that do not permit &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS&quot;&gt;Cross-Origin Resource Sharing (CORS)&lt;/a&gt; as &lt;a href=&quot;https://developer.chrome.com/extensions/xhr&quot;&gt;documented here by Google for Chrome extensions&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;So how do we get these permissions after Google had us remove them?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We’re going to try adding them as &lt;a href=&quot;https://developer.chrome.com/extensions/permissions&quot;&gt;optional permissions&lt;/a&gt; instead of requiring them right away.&lt;/p&gt;
+
+&lt;p&gt;Optional permissions must be specifically granted by users after installation. This makes them much less scary since you can safely install extensions without granting these optional permissions.&lt;/p&gt;
+
+&lt;p&gt;For our extension, you can choose to grant these optional permissions on our extension’s options page. We’ve added two new options:&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;img src=&quot;/images/extension_optional_permissions/new_options.png&quot; style=&quot;display:block;width:100%;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Will something bad happen if we request these permissions again as optional permissions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a mystery to us to be honest. Are we allowed to request these permissions as optional permissions without upsetting Google? The only way to find out is to try so that’s what we’re doing. We’re optimistic things will work out.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Today we submitted an update to our Chrome extension with the optional permissions support.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We hope everything goes smoothly and we’re approved super quick!&lt;/p&gt;
+</description>
+                <pubDate>Mon, 08 Jun 2020 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2020/06/08/updating-our-chrome-extension-after-our-google-scare</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2020/06/08/updating-our-chrome-extension-after-our-google-scare</guid>
+            </item>
+        
+            <item>
+                <title>Our Chrome Extension Is Safe</title>
+                <description>&lt;p&gt;&lt;strong&gt;This is a follow-up to Wednesday’s &lt;a href=&quot;/2020/05/13/lets-guess-what-google-requires-in-14-days-or-they-kill-our-extension/&quot;&gt;Let’s Guess What Google Requires In 14 Days Or They Kill Our Extension&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s get the good news out there right away. Our extension has been approved!&lt;/p&gt;
+
+&lt;div style=&quot;margin:26px;&quot;&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;FYI the latest submission has been approved. Apologies to Pushbullet for the rejection after addressed the original violation &amp;amp; to the broader dev community for not providing more actionable rejections 🙇&lt;a href=&quot;https://t.co/b7Au7Mjppn&quot;&gt;https://t.co/b7Au7Mjppn&lt;/a&gt;&lt;/p&gt;&amp;mdash; Simeon.__proto__ (@DotProto) &lt;a href=&quot;https://twitter.com/DotProto/status/1261047663669084161?ref_src=twsrc%5Etfw&quot;&gt;May 14, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For those worried about losing Pushbullet’s functionality (and for us worried about losing our extension), things are back to normal now. This is great news and we are happy to hear it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;We hope the attention our previous post received results in better feedback for other extension developers that may be struggling with similar vague feedback from Google.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We didn’t expect anywhere near the level of attention our previous post received. All of that attention resulted in our issue being resolved. This is good for us. It is not yet clear if the attention will help other developers that are struggling with similar vague rejections. We hope it does help though.&lt;/p&gt;
+
+&lt;p&gt;A great outcome would be if the current Chrome extension review and feedback process was revisited as a result of the criticism the current process has received. This would mean the outpouring of support we received benefits all extension developers.&lt;/p&gt;
+
+&lt;p&gt;We believe @DotProto and others at Google when they express their desire to improve the feedback extension developers are provided. I hope the overwhelming community support that has been shown will give them the influence they need to push for steps in a better direction.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/PushBullet/comments/gkc2um/our_extension_is_safe_a_followup_to_our_extension/&quot;&gt;Click here to join the discussion on our subreddit.&lt;/a&gt;&lt;/p&gt;
+</description>
+                <pubDate>Fri, 15 May 2020 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2020/05/15/our-extension-is-safe</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2020/05/15/our-extension-is-safe</guid>
+            </item>
+        
+            <item>
+                <title>Let&#39;s Guess What Google Requires In 14 Days Or They Kill Our Extension</title>
+                <description>&lt;p&gt;&lt;strong&gt;We at Pushbullet have received some bad news from Google. It appears our extension will be removed from the Chrome Web Store if we don’t make required changes within 14 days. Not good! The bigger problem? Google hasn’t told us what those required changes are.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/guzba/7a971459f2f6dd8a208d57c5b2e2bfb2&quot;&gt;Here’s the full text of the email if you’d like to read it for yourself.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The Pushbullet Chrome extension has been on the Chrome Web store for over 6 years,  currently has over 1,000,000 users, and has a 4.5 star average rating. &lt;a href=&quot;https://chrome.google.com/webstore/detail/pushbullet/chlffgpmiacpedhhbkiomidkjlcfhogd&quot;&gt;See for yourself here.&lt;/a&gt; We are very proud of this. In addition to the large number of users and excellent rating, our extension is also frequently featured by Chrome Web Store team which we really appreciate! &lt;a href=&quot;https://chrome.google.com/webstore/category/collection/workfromhome&quot;&gt;Here’s us in the Work From Home collection.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Considering all of the work we’ve done over the years to make an exceptional Chrome extension that this worthy of being featured by the Chrome Web Store team, it was shocking to read we are less than 14 days away from being removed from the Web Store.&lt;/p&gt;
+
+&lt;p&gt;The Pushbullet extension is our most-installed app for desktop. It being removed may very well be the end of Pushbullet altogether. This is a big deal for us.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;14 days and counting. What do we have to go on to guess the required changes to not get kicked off the Chrome Web Store?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Fortunately, Google has given us a hint of what changes we need to make. Here’s what the email said:&lt;/p&gt;
+
+&lt;style&gt;
+	.eee {
+		background-color: #ecf0ef;
+		margin: 26px 0 26px 26px;
+		padding: 26px;
+	}
+	.eee p {
+		margin: 0;
+	}
+&lt;/style&gt;
+
+&lt;div class=&quot;eee&quot;&gt;
+	&lt;p&gt;Your item did not comply with the following section of our Program Policies:&lt;/p&gt;
+	&lt;p&gt;&quot;User Data Privacy&quot;&lt;/p&gt;
+	&lt;p&gt;Your product violates the &quot;Use of Permissions&quot; section of the policy, which requires that you:&lt;/p&gt;
+	&lt;p&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Request access to the narrowest permissions necessary to implement your product’s features or services.&lt;/li&gt;
+			&lt;li&gt;If more than one permission could be used to implement a feature, you must request those with the least access to data or functionality.&lt;/li&gt;
+			&lt;li&gt;Don&#39;t attempt to &quot;future proof&quot; your product by requesting a permission that might benefit services or features that have not yet been implemented.&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;We appear to violate the “Use of Permissions” section of the Chrome Web Store policy. That’s not good!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Based on my interpretation of bullet points listed, I believe Google wants us to find ways to reduce the permissions our extension requests. Ok, fair enough. I’ll accept that challenge. It’s not clear what permissions Google wants us to remove (or how many, or anything like that) but lets make a good-faith effort to reduce the permissions our extension requests!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What permissions does our extension request?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Our extension requires these permissions: &lt;b&gt;tabs&lt;/b&gt;, &lt;b&gt;activeTab&lt;/b&gt;, &lt;b&gt;contextMenu&lt;/b&gt;, &lt;b&gt;cookies&lt;/b&gt;, &lt;b&gt;notifications&lt;/b&gt;, &lt;b&gt;idle&lt;/b&gt;, &lt;b&gt;https://*/*&lt;/b&gt;, and &lt;b&gt;http://*/*&lt;/b&gt;. We also optionally request these permissions if a user wants to enable certain features: &lt;b&gt;background&lt;/b&gt;, &lt;b&gt;clipboardRead&lt;/b&gt;, &lt;b&gt;clipboardWrite&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So, can we cut any of these permissions?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;First, let’s start off by prioritizing. I believe the Chrome team are most concerned with the required permissions (these are all granted at install). Optional permissions are requested later and must be manually granted by the user. Since the optional permissions are specifically approved by a user, they seem pretty tame. Let’s focus on reducing the required permissions!&lt;/p&gt;
+
+&lt;p&gt;As I looked at the permissions and what our extension actually needs to operate, I noticed a great opportunity to reduce our permissions requests. We do not need to request access to data on &lt;b&gt;https://*/*&lt;/b&gt; and &lt;b&gt;http://*/*&lt;/b&gt;. Instead, we can simply request data access for &lt;b&gt;https://*.pushbullet.com/*&lt;/b&gt;, &lt;b&gt;http://*.pushbullet.com/*&lt;/b&gt;, and &lt;b&gt;http://localhost/*&lt;/b&gt;. This is a huge reduction in the private data our extension could theoretically access. A big win!&lt;/p&gt;
+
+&lt;p&gt;The other opportunity is the &lt;b&gt;tabs&lt;/b&gt; permission. This permission lets extensions see what tabs are open. Pushbullet uses this permission to avoid opening new tabs for websites that are already open when &lt;a href=&quot;https://blog.pushbullet.com/2013/11/12/real-time-notification-mirroring-from-android-to-your-computer/&quot;&gt;mirrored notifications&lt;/a&gt; are clicked. This is a small sacrifice to make to let go of a big permission. Let’s let it go!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What permissions are required now?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Our extension will now only require: &lt;b&gt;activeTab&lt;/b&gt;, &lt;b&gt;contextMenu&lt;/b&gt;, &lt;b&gt;cookies&lt;/b&gt;, &lt;b&gt;notifications&lt;/b&gt;, &lt;b&gt;idle&lt;/b&gt;, &lt;b&gt;https://*.pushbullet.com/*&lt;/b&gt;, &lt;b&gt;http://*.pushbullet.com/*&lt;/b&gt;, and &lt;b&gt;http://localhost/*&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is a huge reduction in the level of access Pushbullet requires to operate! A big success. Let’s get it submitted to the Chrome Web Store!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Submitted and rejected.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Around 24 hours after submitting the updated extension, it was rejected. Unfortunately, it appears the changes we’ve made are not the changes Google requires.&lt;/p&gt;
+
+&lt;p&gt;Google has provided no further guidance on what changes they require. The reason for rejection was exactly the same as our original notice. I also replied to the email asking for further guidance but have not received any response. I obviously don’t expect one but it was no harm to try.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;7 days left now. Where do we go from here?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve tried coming up with a few theories of other changes we could make to potentially get past whatever is blocking our extension. Here are my current theories:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Change the &lt;b&gt;http(s)://*.pushbullet.com/*&lt;/b&gt; data permissions to &lt;b&gt;http(s)://www.pushbullet.com&lt;/b&gt;. This shouldn’t really matter since it is our own first-party domain after all, but perhaps reducing the scope would help?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Remove the clipboardRead and clipboardWrite permissions. These permissions are optional and only requested if a user enables &lt;a href=&quot;https://blog.pushbullet.com/2014/08/20/introducing-universal-copy-and-paste/&quot;&gt;Universal copy &amp;amp; paste&lt;/a&gt;. However, perhaps Chrome is unwilling to allow extensions to request these permissions now? &lt;a href=&quot;https://www.androidpolice.com/2019/03/14/android-q-will-kill-clipboard-manager-apps-in-the-name-of-privacy/&quot;&gt;Google did kill clipboard managers on Android recently after all.&lt;/a&gt; This will mean removing the feature from our extension.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Why not just keep trying submissions with changes that might help until it passes review?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I think I don’t have any choice to do this, but it isn’t without risk. I fear Google’s automated system will think I am trying to find a way around the rules and permaban my entire Google account. Their policy does specifically state: &lt;b&gt;This may also result in the suspension of related Google services associated with your Google account.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Giving it another try, stay tuned for updates.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Later today I am going to give another submission a try with the 2 changes I listed above. Follow our blog and &lt;a href=&quot;http://twitter.com/pushbullet&quot;&gt;@pushbullet&lt;/a&gt; for updates!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What do you think of all of this?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m eager to hear what people think so far. Am I missing something obvious? Do you have a good suggestion I may not have thought of? Do you have a friend that works on Chrome? Please share! &lt;a href=&quot;https://www.reddit.com/r/PushBullet/comments/gj2dio/lets_guess_what_google_requires_in_14_days_or/&quot;&gt;I have made a post on the Pushbullet subreddit for us to discuss this here.&lt;/a&gt;&lt;/p&gt;
+</description>
+                <pubDate>Wed, 13 May 2020 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2020/05/13/lets-guess-what-google-requires-in-14-days-or-they-kill-our-extension</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2020/05/13/lets-guess-what-google-requires-in-14-days-or-they-kill-our-extension</guid>
+            </item>
+        
+            <item>
+                <title>On-Demand Exports Of Your Pushbullet Data</title>
+                <description>&lt;p&gt;
+    &lt;img src=&quot;/images/export_data/banner.png&quot; style=&quot;display:block;width:100%;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Starting today, you can request an export of your Pushbullet data with just the click of a button.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Did you know Pushbullet is now officially 7 years old? 7 years is a long time! To celebrate, we wanted to do a little something special and that’s what we’re sharing with you today.&lt;/p&gt;
+
+&lt;p&gt;Having been around now for 7 years, many Pushbullet users have accumulated a lot of really important history in our app. Since all the data in your Pushbullet account belongs to you, it makes sense that you should be able to download it all really easily.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, even though that does make sense, there hasn’t really been an easy to get a copy of everything in your Pushbullet account. Today we’ve fixed that!&lt;/p&gt;
+
+&lt;p&gt;Requesting an export is easy. All you need to do is go to &lt;a href=&quot;https://www.pushbullet.com/#settings/history&quot;&gt;this page&lt;/a&gt; and click the Start Export button. Clicking that requests the export and you’ll receive an email confirming the request.&lt;/p&gt;
+
+&lt;p&gt;Once your export is ready, you’ll receive another email containing a link to the zip archive which will include all of your push history, including the files.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Why would I want to be able to export my data?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You want to be able to export your data from any service you trust with information you don’t want to lose. The only way to truly be sure you have your data safe and sound is to have a copy of it backed up (ideally in more than one place).&lt;/p&gt;
+
+&lt;p&gt;Here are just a couple of scenarios where an export can be really helpful:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You want to delete the Facebook or Google account that you use to sign in to Pushbullet.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By deleting the account you use to sign in to Pushbullet, you may lose access to all of your data. This would be really frustrating. This concern goes away when you can have an export of all of your data safely stored.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You have stopped using Pushbullet and want to delete your account.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not everyone uses services forever. We get that. If you’ve used Pushbullet for a while, there may be a lot of valuable and private information you both don’t want to lose and want deleted from the cloud. Grabbing an export before deleting an account is the perfect way to keep your data.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;We hope our new data export feature helps you stay in control of your data.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have some feedback for us on this or other things related to Pushbullet, consider starting a discussion on the &lt;a href=&quot;https://www.reddit.com/r/PushBullet/&quot;&gt;Pushbullet subreddit&lt;/a&gt;. We’re always watching for new posts.&lt;/p&gt;
+</description>
+                <pubDate>Mon, 27 Jan 2020 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2020/01/27/on-demand-exports-of-your-pushbullet-data</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2020/01/27/on-demand-exports-of-your-pushbullet-data</guid>
+            </item>
+        
+            <item>
+                <title>Improving Our SMS API</title>
+                <description>&lt;p&gt;&lt;strong&gt;Today we’re making a huge improvement to Pushbullet’s public API by adding support for reliably sending SMS and MMS messages (including picture messages)!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://docs.pushbullet.com/#text&quot;&gt;The documentation for our new SMS API calls is right here!&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://docs.pushbullet.com/#text&quot;&gt;new SMS API calls&lt;/a&gt; we’ve added make it easy to programmatically send text messages, group messages, and even picture messages.&lt;/p&gt;
+
+&lt;p&gt;The messages sent using our API come from your own phone and from that phone’s phone number. This means if the recipients have your contact info, they’ll know you sent them the message. Even better, any replies will go right to your phone as expected.&lt;/p&gt;
+
+&lt;p&gt;Additionally, you can send as many text messages as you want without needing to worry about paying per message like you would for services like Twilio.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Important notes&lt;/b&gt;: since the messages come from your own phone, they are covered by your phone plan with your carrier. If you have unlimited texts, you’re set. If you don’t, be aware that sending text messages using our API costs the same as sending texts yourself by hand. Additionally, &lt;a href=&quot;http://pushbullet.com/pro&quot;&gt;Pushbullet Pro&lt;/a&gt; is required to send more than 100 messages per month through Pushbullet.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reliably sending your messages.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Our new API makes a lot of effort to ensure your messages get sent ASAP. Let’s go through how things work.&lt;/p&gt;
+
+&lt;p&gt;First, to send text messages your phone must be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Powered on&lt;/li&gt;
+  &lt;li&gt;Connected to WiFi or have data coverage&lt;/li&gt;
+  &lt;li&gt;Have Pushbullet signed in with SMS permissions granted&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now, as you may be thinking, having your phone connected to WiFi or data all the time isn’t really possible. Fortunately, we’re ready for that. If your phone is offline when you try to send a text message using our API, it will simply be queued for the next time your phone comes online and syncs.&lt;/p&gt;
+
+&lt;p&gt;In order to prevent stale messages from being sent, we do delete queued messages after 1 hour even if they have not been sent. We find this to be a reasonable trade-off between reliably sending messages and avoiding stale messages from suddenly going out if an old device comes back online.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;An simple example API call&lt;/strong&gt;&lt;/p&gt;
+
+&lt;style type=&quot;text/css&quot; rel=&quot;stylesheet&quot;&gt;
+code { white-space: pre; }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;code&gt; curl --header &#39;Access-Token: ACCESS_TOKEN_HERE&#39;
+ --header &#39;Content-Type: application/json&#39;
+ --data-binary &#39;{&quot;data&quot;: {
+   &quot;target_device_iden&quot;: &quot;device_iden&quot;
+   &quot;addresses&quot;: [&quot;+14159366621&quot;],
+   &quot;message&quot;: &quot;The text message you want to send&quot;}}&#39;
+ --request POST
+ https://api.pushbullet.com/v2/texts
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see above, you only need 3 pieces of information to send a text message or group message:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;target_device_iden&lt;/b&gt; - The Pushbullet iden of the phone that should send this text message.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;addresses&lt;/b&gt; - One or more phone numbers you want to receive this message (more than one sends a group message).&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;message&lt;/b&gt; - The message contents you want to send.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What about sending picture messages?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Sending picture messages isn’t much harder. All you’ll need to do is upload the picture you want to send using &lt;a href=&quot;https://docs.pushbullet.com/#upload&quot;&gt;our Upload API&lt;/a&gt;, then include the file_url and file_type in the API call like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt; curl --header &#39;Access-Token: ACCESS_TOKEN_HERE&#39;
+ --header &#39;Content-Type: application/json&#39;
+ --data-binary &#39;{&quot;data&quot;: {
+     &quot;target_device_iden&quot;: &quot;device_iden&quot;
+     &quot;addresses&quot;: [&quot;+14159366621&quot;],
+     &quot;file_type&quot;: &quot;image/jpeg&quot;
+   },
+   &quot;image_url&quot;: &quot;https://dl.pushbulletusercontent.com/example.jpg&quot;}&#39;
+ --request POST
+ https://api.pushbullet.com/v2/texts
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;We hope you like the new and improved SMS API we’ve added today!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have some feedback for us or want to request more API improvements, consider starting a discussion on the &lt;a href=&quot;https://www.reddit.com/r/PushBullet/&quot;&gt;Pushbullet subreddit&lt;/a&gt;. We’re always checking in to see the new posts.&lt;/p&gt;
+</description>
+                <pubDate>Tue, 21 Jan 2020 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2020/01/21/improving-our-sms-api</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2020/01/21/improving-our-sms-api</guid>
+            </item>
+        
+            <item>
+                <title>A Better Looking And Easier To Use Browser Extension</title>
+                <description>&lt;p&gt;&lt;strong&gt;We’ve given our browser extension a full UI refresh and hope you’ll agree the extension has never looked better! This update will roll out to everyone over the next few days.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Earlier this year we &lt;a href=&quot;https://blog.pushbullet.com/2019/02/11/updated-material-design-adaptive-icon-and-dark-mode-out-now/&quot;&gt;updated our Android app’s user interface&lt;/a&gt; to a much cleaner and more modern design. The feedback we got from you all on that update was overwhelmingly positive which was amazing. After receiving so much positive feedback it was clear we needed to bring that same new level of polish to our other apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The new and improved look&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To compare the new and old UI, click on the labels below:&lt;/p&gt;
+
+&lt;script&gt;
+	document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+		var oldDiv = document.getElementById(&#39;old&#39;)
+		var newDiv = document.getElementById(&#39;new&#39;)
+		var oldHover = document.getElementById(&#39;old-hover&#39;)
+		var newHover = document.getElementById(&#39;new-hover&#39;)
+		oldHover.onclick = function() {
+			oldDiv.style.display = &#39;block&#39;
+			newDiv.style.display = &#39;none&#39;
+			oldHover.style.color = &#39;#4ab367&#39;
+			newHover.style.color = &#39;&#39;
+		}
+		newHover.onclick = function() {
+			oldDiv.style.display = &#39;none&#39;
+			newDiv.style.display = &#39;block&#39;
+			oldHover.style.color = &#39;&#39;
+			newHover.style.color = &#39;#4ab367&#39;
+		}
+	})
+&lt;/script&gt;
+
+&lt;div&gt;
+	&lt;div style=&quot;overflow:hidden;margin-top:-10px;&quot;&gt;
+		&lt;div id=&quot;old-hover&quot; style=&quot;float:left;width:50%;text-align:center;padding:10px 0;cursor:pointer;font-weight:bold;&quot;&gt;
+			Old UI
+		&lt;/div&gt;
+		&lt;div id=&quot;new-hover&quot; style=&quot;float:left;width:50%;text-align:center;padding:10px 0;cursor:pointer;font-weight:bold;color:#4ab367;&quot;&gt;
+			New UI
+		&lt;/div&gt;
+	&lt;/div&gt;
+    &lt;div id=&quot;new&quot;&gt;
+        &lt;img style=&quot;max-width:688px;margin:0 26px;&quot; src=&quot;/images/extension_eoy2019/chromeNewLight.png&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;old&quot; style=&quot;display:none;&quot;&gt;
+        &lt;img style=&quot;max-width:688px;margin:0 26px;&quot; src=&quot;/images/extension_eoy2019/chromeOld.png&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We’ve adopted the same bottom tab based navigation you’re used to from our Android app. Whether you’re a new user exploring Pushbullet’s features or already an expert, the new navigation is now consistent and very easy to use.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;We didn’t just refresh our UI, we’ve also given the extension some new tricks.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div style=&quot;float:right;margin-top:-20px;margin-left:60px;margin-right:40px;&quot;&gt;
+    &lt;img src=&quot;/images/extension_eoy2019/chromeExactTime.png&quot; width=&quot;347&quot; height=&quot;216&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;First, we now show you the exact date and time of a message when you hover over the bubble. We’ve received a lot of requests to add a way to see exact timestamps so we’ve made sure to get that into this update.&lt;/p&gt;
+
+&lt;p&gt;Second, you can now see the Channels you’re following right in the extension. We didn’t have this before due to navigation space limitations, but we’re happy to finally be able to get this added!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;No cutting corners here, even the Settings page new looks sharp!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script&gt;
+	document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+		var oldDiv = document.getElementById(&#39;old2&#39;)
+		var newDiv = document.getElementById(&#39;new2&#39;)
+		var oldHover = document.getElementById(&#39;old-hover2&#39;)
+		var newHover = document.getElementById(&#39;new-hover2&#39;)
+		oldHover.onclick = function() {
+			oldDiv.style.display = &#39;block&#39;
+			newDiv.style.display = &#39;none&#39;
+			oldHover.style.color = &#39;#4ab367&#39;
+			newHover.style.color = &#39;&#39;
+		}
+		newHover.onclick = function() {
+			oldDiv.style.display = &#39;none&#39;
+			newDiv.style.display = &#39;block&#39;
+			oldHover.style.color = &#39;&#39;
+			newHover.style.color = &#39;#4ab367&#39;
+		}
+	})
+&lt;/script&gt;
+
+&lt;div&gt;
+	&lt;div style=&quot;overflow:hidden;margin-top:-10px;&quot;&gt;
+		&lt;div id=&quot;old-hover2&quot; style=&quot;float:left;width:50%;text-align:center;padding:10px 0;cursor:pointer;font-weight:bold;&quot;&gt;
+			Old UI
+		&lt;/div&gt;
+		&lt;div id=&quot;new-hover2&quot; style=&quot;float:left;width:50%;text-align:center;padding:10px 0;cursor:pointer;font-weight:bold;color:#4ab367;&quot;&gt;
+			New UI
+		&lt;/div&gt;
+	&lt;/div&gt;
+    &lt;div id=&quot;new2&quot;&gt;
+        &lt;img style=&quot;max-width:688px;margin:0 26px;&quot; src=&quot;/images/extension_eoy2019/chromeSettingsNew.png&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;old2&quot; style=&quot;display:none;&quot;&gt;
+        &lt;img style=&quot;max-width:688px;margin:0 26px;&quot; src=&quot;/images/extension_eoy2019/chromeSettingsOld.png&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The screenshot here speaks for itself. The updated page looks much nicer!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;As a bonus for &lt;a href=&quot;http://pushbullet.com/pro&quot;&gt;Pro&lt;/a&gt; subscribers, Dark Mode!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div&gt;
+    &lt;img style=&quot;max-width:688px;margin:0 26px;&quot; src=&quot;/images/extension_eoy2019/chromeNewDark.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are some serious Dark Mode die-hard fans out there who immediately asked to have Dark Mode added to all of our apps after we added support for it on Android. Well, we heard you loud and clear and are really happy with how it turned out!&lt;/p&gt;
+
+&lt;p&gt;Pushbullet Pro users can enable Dark Mode in the extension’s Settings page.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;That’s all for today, but there’s more coming!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There are more upgrades for you in the works (and not just UI updates either). Keep an eye on our blog or &lt;a href=&quot;https://www.pushbullet.com/channel?tag=pushbullet&quot;&gt;subscribe here to get notified about Pushbullet updates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Have some feedback on this update for us? We’ll be watching the &lt;a href=&quot;https://www.reddit.com/r/PushBullet/&quot;&gt;Pushbullet subreddit&lt;/a&gt; for your take.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://www.reddit.com/r/PushBullet/comments/ecfgub/a_better_looking_and_easier_to_use_browser/?&quot;&gt;Subreddit discussion can be found here.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+                <pubDate>Wed, 18 Dec 2019 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2019/12/18/a-better-looking-and-easier-to-use-browser-extension</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2019/12/18/a-better-looking-and-easier-to-use-browser-extension</guid>
+            </item>
+        
+            <item>
+                <title>Better Notifications On Android</title>
+                <description>&lt;p&gt;Pushbullet shows a LOT of notifications every single day. Considering just how huge that number is, we’ve decided to focus today’s update on improving our notifications. We think you’ll really like the changes.&lt;/p&gt;
+
+&lt;h4 id=&quot;bundled-notifications&quot;&gt;Bundled Notifications&lt;/h4&gt;
+
+&lt;div class=&quot;center&quot; style=&quot;overflow:hidden;margin:0 60px -15px 60px;&quot;&gt;
+    &lt;div style=&quot;float:left;&quot;&gt;
+        &lt;img src=&quot;/images/notif_upgrades/notifsBundled.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;float:right;&quot;&gt;
+        &lt;img src=&quot;/images/notif_upgrades/notifsExpanded.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;First and foremost, we’ve added support for bundled notifications for pushes from &lt;a href=&quot;https://pushbullet.com/channels&quot;&gt;Pushbullet Channels&lt;/a&gt;! This has been a very popular request so we’re happy to be getting it into the app. Bundled notifications enable you to see many notifications at a glance but then take action on specific notifications instead of everything all at once. It is a huge improvement for people that want the power to dismiss or open specific notifications and it feels great.&lt;/p&gt;
+
+&lt;h4 id=&quot;direct-reply&quot;&gt;Direct Reply&lt;/h4&gt;
+
+&lt;div style=&quot;float:right;margin-top:-10px;margin-left:60px;margin-right:60px;&quot;&gt;
+    &lt;img src=&quot;/images/notif_upgrades/directReply.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In addition to improving notifications from channels, we’ve also made a big upgrade to notifications from friends. Now you can reply to an incoming message right from the notification without needing to leave what you’re doing. This is a great way to send a quick reply without opening the Pushbullet app.&lt;/p&gt;
+
+&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;quick-settings-tiles&quot;&gt;Quick Settings Tiles&lt;/h4&gt;
+
+&lt;div style=&quot;float:right;margin-top:-10px;margin-left:60px;margin-right:60px;&quot;&gt;
+    &lt;img src=&quot;/images/notif_upgrades/quickSettingTile.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Finally, Pushbullet doesn’t just show notifications for pushes, we also have Notification Mirroring and SMS sync showing notifications. We’ve heard it would be really nice to have an easy way to turn those features on or off with a tap. For example, if you only want Notification Mirroring on while you’re at your desk.&lt;/p&gt;
+
+&lt;p&gt;Quick settings tiles can be added above your notification tray and are available whenever you open your notifications. To add a quick settings tile, tap the small pencil icon in the bottom right of the notification tray.&lt;/p&gt;
+
+&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;We’re excited to be getting these upgrades out to everyone! Today’s update is available to our beta testers right now and we’ll have it out to everyone very soon. If you want access right away, &lt;a href=&quot;https://play.google.com/apps/testing/com.pushbullet.android&quot;&gt;join the beta here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Have some feedback for us? Join us on the &lt;a href=&quot;https://reddit.com/r/pushbullet&quot;&gt;Pushbullet subreddit&lt;/a&gt;!&lt;/em&gt;&lt;/p&gt;
+</description>
+                <pubDate>Mon, 11 Mar 2019 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2019/03/11/better-notifications-on-android</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2019/03/11/better-notifications-on-android</guid>
+            </item>
+        
+            <item>
+                <title>Updated Material Design, Adaptive Icon, And Dark Mode Out Now</title>
+                <description>&lt;p&gt;&lt;strong&gt;We are excited to release a completely updated UI to our Android beta testers today! &lt;a href=&quot;https://play.google.com/apps/testing/com.pushbullet.android&quot;&gt;Join the beta&lt;/a&gt; now to get the new UI and features right away.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We really care that Pushbullet is a great Android app. This is something that has been important to us since the very beginning and remains just as important today. The standards for top-tier Android apps are constantly increasing and &lt;a href=&quot;https://blog.pushbullet.com/2014/04/30/the-pushbullet-android-app-just-got-a-lot-better/&quot;&gt;we have&lt;/a&gt; a &lt;a href=&quot;https://blog.pushbullet.com/2014/07/29/a-better-android-onboarding-experience/&quot;&gt;long history&lt;/a&gt; of &lt;a href=&quot;https://blog.pushbullet.com/2014/10/28/our-most-material-update-yet/&quot;&gt;updates&lt;/a&gt; trying to &lt;a href=&quot;https://blog.pushbullet.com/2015/06/30/meet-the-new-pushbullet/&quot;&gt;keep up&lt;/a&gt;. Today’s update is the latest addition to this series as we try to make Pushbullet the best possible app we can.&lt;/p&gt;
+
+&lt;div class=&quot;center&quot; style=&quot;overflow:hidden;margin:45px 60px -15px 60px;&quot;&gt;
+    &lt;div style=&quot;float:left;&quot;&gt;
+        &lt;img src=&quot;/images/feb_2019_android/oldDrawer.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;float:right;&quot;&gt;
+        &lt;img src=&quot;/images/feb_2019_android/whiteMain.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The most significant change we’ve made in today’s update is switching to bottom tabs instead of a drawer for navigation. This is a huge change and while we’re not the first to do it (many Google apps have already made this change including Messages, Phone, Photos, and YouTube), we really like the way it turned out.&lt;/p&gt;
+
+&lt;div style=&quot;float:right;margin-top:-30px;margin-left:60px;margin-right:60px;&quot;&gt;
+    &lt;img src=&quot;/images/feb_2019_android/keyboardOpen.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The new bottom tabs are easier to use and aren’t hidden away out of sight like the old drawer was. This makes getting around and exploring much easier.&lt;/p&gt;
+
+&lt;p&gt;As we tested using the bottom tabs, one little improvement we made that really increased our quality of life was to hide the bottom tabs whenever the keyboard is open. This prevents accidental miss-clicks and avoids wasting screen space while the keyboard is already stealing a bunch of it.&lt;/p&gt;
+
+&lt;p&gt;We think you’ll really like how easy and fast the bottom tabs make getting around in the app!&lt;/p&gt;
+
+&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Another great improvement we’ve made is updating the status bar and navigation bar colors based on the screen contents to create a consistent, polished look and feel:&lt;/p&gt;
+
+&lt;div class=&quot;center&quot; style=&quot;overflow:hidden;margin:0px 60px 0px 60px;&quot;&gt;
+    &lt;div style=&quot;float:left;&quot;&gt;
+        &lt;img src=&quot;/images/feb_2019_android/smsOld.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;float:right;&quot;&gt;
+        &lt;img src=&quot;/images/feb_2019_android/smsWhite.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In addition to updates inside the app, we’ve also updated our app icon to be an adaptive icon! Adaptive icons enable apps to have home screen icons that are consistent with other apps and enable different home screens to use custom shapes and effects:&lt;/p&gt;
+
+&lt;div style=&quot;margin-bottom:45px;text-align:center;&quot;&gt;
+    &lt;img src=&quot;/images/feb_2019_android/adaptive_icon.png&quot; width=&quot;688&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As an extra special treat, we’ve also added support for dark mode for our &lt;a href=&quot;https://www.pushbullet.com/pro&quot;&gt;Pro&lt;/a&gt; users! Dark mode is much easier on the eyes in dark rooms or at night, and may even save you battery life. We know some of you really like dark mode so we tried to make it perfect:&lt;/p&gt;
+
+&lt;div class=&quot;center&quot; style=&quot;overflow:hidden;margin:0 45px;&quot;&gt;
+    &lt;div style=&quot;float:left;&quot;&gt;
+        &lt;img src=&quot;/images/feb_2019_android/darkMain.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;float:right;&quot;&gt;
+        &lt;img src=&quot;/images/feb_2019_android/smsDark.png&quot; width=&quot;280&quot; height=&quot;562&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;These have been just a few sneak peeks at the improvements we’ve made in today’s update. The update is now available to our &lt;a href=&quot;https://play.google.com/apps/testing/com.pushbullet.android&quot;&gt;beta testers&lt;/a&gt; and we’ll have it out to everyone soon. We hope you like it as much as we do!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Trying out the update and have some feedback for us? We’ll be watching the comments below and on the &lt;a href=&quot;https://reddit.com/r/pushbullet&quot;&gt;Pushbullet subreddit&lt;/a&gt;. Please let us know about any issues you run into!&lt;/em&gt;&lt;/p&gt;
+</description>
+                <pubDate>Mon, 11 Feb 2019 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2019/02/11/updated-material-design-adaptive-icon-and-dark-mode-out-now</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2019/02/11/updated-material-design-adaptive-icon-and-dark-mode-out-now</guid>
+            </item>
+        
+            <item>
+                <title>Reply To Allo Messages From PC</title>
+                <description>&lt;p style=&quot;float:right;margin:0 20px;&quot;&gt;
+    &lt;img src=&quot;/images/reply_to_all/allo.png&quot; width=&quot;128&quot; height=&quot;128&quot; style=&quot;margin:0 30px;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Grab the latest &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.pushbullet.android&quot;&gt;Pushbullet for Android&lt;/a&gt; update to start replying to Allo messages from PC now!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Allo (Google’s brand new messaging app) is missing one feature that those of us who spend most of their time on a computer really want—the ability to send messages from a computer.&lt;/p&gt;
+
+&lt;p&gt;While it’s not a full desktop app for Allo, Pushbullet can now enable you to see and reply to Allo messages from your computer. Here’s how:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.pushbullet.android&quot;&gt;Pushbullet&lt;/a&gt; on your Android phone.&lt;/li&gt;
+  &lt;li&gt;Enable &lt;a href=&quot;/2014/01/24/sync-your-android-notification-drawer-with-your-computer/&quot;&gt;Notification Mirroring&lt;/a&gt; after signing in to the Android app.&lt;/li&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://www.pushbullet.com/apps&quot;&gt;Pushbullet on your computer&lt;/a&gt; (either our browser extension or Windows desktop app).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And that’s all there is to it!&lt;/p&gt;
+
+&lt;p&gt;From now on, whenever you receive an Allo message notification on your phone, Pushbullet will show you that notification on your computer too. Just click Reply, type your message, and hit enter to send a reply right from your computer.&lt;/p&gt;
+
+&lt;p style=&quot;text-align:center;margin-top:4px&quot;&gt;
+    &lt;img src=&quot;/images/sms_replying/notification.png&quot; width=&quot;400&quot; height=&quot;&quot; /&gt;
+&lt;/p&gt;
+</description>
+                <pubDate>Fri, 28 Oct 2016 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2016/10/28/reply-to-allo-messages-from-pc</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2016/10/28/reply-to-allo-messages-from-pc</guid>
+            </item>
+        
+            <item>
+                <title>WebExtension Update For Firefox</title>
+                <description>&lt;p&gt;Yesterday we released a very special update to the Pushbullet Firefox extension—our Firefox extension is now a WebExtension!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/Add-ons/WebExtensions&quot;&gt;WebExtensions&lt;/a&gt; are a cross-browser system for building browser extensions that is compatible with Firefox, Chrome, and Opera. (Soon Microsoft’s Edge browser will support them too.)&lt;/p&gt;
+
+&lt;p&gt;Firefox added support for WebExtensions in Firefox 48 and this was terrific news for developers like us here at Pushbullet. Instead of having to manage completey separate exensions for Chrome and Firefox, we now have one WebExtension that supports both. This means Chrome and Firefox users will have the same features and high quality experience without us as developers having to do twice the work.&lt;/p&gt;
+
+&lt;p&gt;WebExtensions have been a work-in-progress from Mozilla that we at Pushbullet been watching closely since &lt;a href=&quot;https://blog.mozilla.org/addons/2015/08/21/the-future-of-developing-firefox-add-ons/&quot;&gt;they were announced in the Fall last year&lt;/a&gt;. The WebExtensions team even set up a simple website to keep tabs on progress at &lt;a href=&quot;http://arewewebextensionsyet.com&quot;&gt;arewewebextensionsyet.com&lt;/a&gt;. The release of Web Extensions in Firefox 48 is a huge accomplishment for them. From us here at Pushbullet to you all, congratulations!&lt;/p&gt;
+
+&lt;h4 id=&quot;so-whats-new-in-the-firefox-extension&quot;&gt;So what’s new in the Firefox extension?&lt;/h4&gt;
+
+&lt;p&gt;The most important part of today’s update is that our Firefox and Chrome extensions are now essentially identical in features, reliability, and interface now that they are both running the same code. This will also continue to be the case into the future which is very exciting!&lt;/p&gt;
+
+&lt;p&gt;You won’t notice many visual changes in the update–we had worked hard to make our Chrome and Firefox extensions as similar as we could already. Internally though, our new Firefox extension now has the benefit of many improvements focusing on speed and reliability (especially for SMS) along with some formerly Chrome-only features like right-clicking on images to push them to other devices.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-do-you-think-about-webextensions&quot;&gt;What do you think about WebExtensions?&lt;/h4&gt;
+
+&lt;p&gt;So, Firefox fans out there, were you aware of WebExtensions before our post? Also, what do you think about this shared extension system for Firefox, Chrome, and the other browsers? We’ll be watching the comments below.&lt;/p&gt;
+</description>
+                <pubDate>Tue, 25 Oct 2016 00:00:00 -0500</pubDate>
+                <link>https://blog.pushbullet.com/2016/10/25/webextension-update-for-firefox</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2016/10/25/webextension-update-for-firefox</guid>
+            </item>
+        
+            <item>
+                <title>A Fresh Start For Pushbullet On iOS</title>
+                <description>&lt;div class=&quot;center&quot; style=&quot;display:block;float:right;overflow:hidden;margin:0 20px 10px 30px;&quot;&gt;
+    &lt;a href=&quot;https://itunes.apple.com/us/app/pushbullet/id810352052&quot;&gt;
+        &lt;img src=&quot;/images/iphone_app_update_1/app_store_button.svg&quot; width=&quot;169&quot; height=&quot;50&quot; style=&quot;display:inline-block;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We’ve made a lot of improvements to Pushbullet in the past several months. Unfortuantely, however, many of these improvements haven’t been available in our iOS app. As a small team, we’ve had to consider how we can deliver a great and consistent experience across all of our apps.&lt;/p&gt;
+
+&lt;p&gt;To ensure that our iOS app gets all of the latest features, we’ve made some changes to how we build our apps and decided that a new fundation is the best place for the Pushbullet iOS app to grow from. This is today’s update.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Today’s update brings a brand new Pushbullet app to iPhone and iPad.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Our focus in this update is to deliver an excellent core Pushbullet experience on iOS. This means instant and reliable notifications, easy sharing of links and files, and a great Share Extension to share from other apps. We think you’ll also appreciate the fixes and improvements we’ve made as we tried to address as much of the feedback we’ve received as possible.&lt;/p&gt;
+
+&lt;p&gt;Take a peek at the new iOS app here:&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin:15px 0;&quot;&gt;
+    &lt;img src=&quot;/images/ios3/1.png&quot; style=&quot;display:inline-block;margin:0;max-width:250px;margin:0 20px;&quot; /&gt;
+    &lt;img src=&quot;/images/ios3/2.png&quot; style=&quot;display:inline-block;margin:0;max-width:250px;margin:0 20px;&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align:center;margin:15px 0 35px 0;&quot;&gt;
+    &lt;img src=&quot;/images/ios3/3.png&quot; style=&quot;display:inline-block;margin:0;max-width:250px;margin:0 20px;&quot; /&gt;
+    &lt;img src=&quot;/images/ios3/4.png&quot; style=&quot;display:inline-block;margin:0;max-width:250px;margin:0 20px;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;weve-got-a-lot-more-coming-soon-to-ios-soon&quot;&gt;We’ve got a lot more coming soon to iOS soon:&lt;/h4&gt;
+
+&lt;p&gt;&lt;b&gt;Remote Texting&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;We’ve put a lot of work into making Pushbullet the best way to send text messages through your Android phone while sitting at your computer or using your Android tablet. We’re working now to bring this same remote texting functionality to iOS.&lt;/p&gt;
+
+&lt;p&gt;This will enable those with an Android phone to send and receive text messages while using their iPad (or a spare iPhone if you happen to have one).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;We would love to be able to enable iPhone users to send text messages from their other devices or computers but unfortunately this is not possible.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Remote Files&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Late last year we added &lt;a href=&quot;/2015/12/09/browse-your-files-remotely-from-any-device/&quot;&gt;Remote Files&lt;/a&gt; to Pushbullet. Remote Files lets you browse and download files from your other devices from anywhere in the world. This can be a real life-saver when you need a file.&lt;/p&gt;
+
+&lt;p&gt;Remote Files isn’t ready in iOS app just yet, but we are working to get it added as soon as possible so keep an eye on our blog and the App Store for updates.&lt;/p&gt;
+
+&lt;h4 id=&quot;grab-the-update-from-the-app-store-and-let-us-know-what-you-think&quot;&gt;Grab the update from the App Store and let us know what you think!&lt;/h4&gt;
+
+&lt;p&gt;We’ll be watching the comments below. You can also reach us at ios@pushbullet.com any time.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin:15px;&quot;&gt;
+    &lt;a href=&quot;https://itunes.apple.com/us/app/pushbullet/id810352052&quot;&gt;
+        &lt;img src=&quot;/images/iphone_app_update_1/app_store_button.svg&quot; height=&quot;70&quot; style=&quot;display:inline-block;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Mon, 08 Feb 2016 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2016/02/08/a-fresh-start-for-pushbullet-on-ios</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2016/02/08/a-fresh-start-for-pushbullet-on-ios</guid>
+            </item>
+        
+            <item>
+                <title>Send Picture Messages From Computer (And More Reliable Texting Too)</title>
+                <description>&lt;p&gt;
+    &lt;img src=&quot;/images/imessage/banner.png&quot; style=&quot;display:block;width:100%;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;We’ve been working hard to make Pushbullet the best way to send texts from your computer. We started by &lt;a href=&quot;/2015/07/15/sms-converstations-on-your-computer/&quot;&gt;syncing conversation histories&lt;/a&gt; and &lt;a href=&quot;/2015/08/11/end-to-end-encryption/&quot;&gt;adding support for end-to-end encryption&lt;/a&gt; to ensure your privacy. We then added support for &lt;a href=&quot;/2015/12/15/double-update-reply-to-group-texts-from-pc-and-change-drives-in-remote-files/&quot;&gt;group texting&lt;/a&gt;. Today we’re adding the last missing feature: picture messages!&lt;/p&gt;
+
+&lt;div style=&quot;float:right;margin-top:-30px;margin-left:20px;&quot;&gt;
+    &lt;img src=&quot;/images/picture_messages/chrome.png&quot; width=&quot;350&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;picture-messages&quot;&gt;Picture Messages&lt;/h3&gt;
+
+&lt;p&gt;Sending picture messages (MMS) via Pushbullet is easy. To send an image, you can either drag-and-drop the image onto a conversation, or select one using the paperclip icon. After that, we take care of the rest.&lt;/p&gt;
+
+&lt;p&gt;Picture messages sent using Pushbullet’s SMS feature are exactly like those you would send yourself from your phone. We don’t just send a link to the image or anything like that. This means people will receive and see your images without ever knowing you sent it from your computer.&lt;/p&gt;
+
+&lt;p&gt;Note: Sending picture messages requires your phone be running Android 5.0 Lollipop or later.&lt;/p&gt;
+
+&lt;div style=&quot;float:right;margin-top:-30px;margin-left:30px;&quot;&gt;
+    &lt;img src=&quot;/images/picture_messages/android.png&quot; width=&quot;340&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;sms-reliability&quot;&gt;SMS Reliability&lt;/h3&gt;
+
+&lt;p&gt;Texting from your computer is awesome, but it must work reliably to be really great. Knowing this, we’ve worked hard to make texting via Pushbullet as reliable as possible. Unfortunately, texting has remained sensitive to network issues. This means texts would fail to send if we couldn’t get it to your phone at that moment. This isn’t acceptable, so we’ve built a brand new texting system to fix it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Starting with the latest update for our &lt;a href=&quot;https://chrome.google.com/webstore/detail/pushbullet/chlffgpmiacpedhhbkiomidkjlcfhogd&quot;&gt;Chrome extension&lt;/a&gt;, &lt;a href=&quot;https://www.pushbullet.com/apps&quot;&gt;Windows desktop app&lt;/a&gt;, and &lt;a href=&quot;https://www.pushbullet.com/#sms&quot;&gt;website&lt;/a&gt;, we’ve made texting far more reliable. Here’s how:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We now reliably sync outgoing text messages with your phone, ensuring that your messages will reliably send as soon as possible (even if they can’t be sent immediately).&lt;/p&gt;
+
+&lt;p&gt;If your phone is offline momentarily or if some other issue is preventing us from talking to your phone, the texts remain queued and will be sent as soon as possible.&lt;/p&gt;
+
+&lt;p&gt;You can see the messages that are queued at any time (and can cancel them too). Qeued messages do expire after 1 hour. Also, if for any reason your messages aren’t sending, opening the Pushbullet Android app will get them to send.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How do I get the update?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The updates for our Android app, Chrome extension, and Windows desktop app are rolling out automatically. Here’s how to get the update as soon as possible if you don’t want to wait:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Android&lt;/b&gt;: Open the Play Store and check the Pushbullet app for an update.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Windows desktop&lt;/b&gt;: Quit and re-open the app. It will update if one is available.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Chrome extension&lt;/b&gt;: Go to the Extensions page (chrome://extensions), enable &lt;em&gt;Developer mode&lt;/em&gt; at the top right, then click &lt;em&gt;Update extensions now&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;What about texting from Firefox or Android tablets?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We’re working to bring our more reliable texting feature to all of our apps. Updates will be out soon. In the meantime, texting will continue to work using the previous system.&lt;/p&gt;
+
+&lt;h3 id=&quot;happy-2016&quot;&gt;Happy 2016!&lt;/h3&gt;
+
+&lt;p&gt;This is our first big update of the year and we’re especially excited about it because SMS reliability has been an issue for some of you out there. We’re happy to improve it. We hope you all notice the improvements right away.&lt;/p&gt;
+</description>
+                <pubDate>Wed, 13 Jan 2016 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2016/01/13/sending-picture-messages-from-computer-and-more-reliable-texting-too</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2016/01/13/sending-picture-messages-from-computer-and-more-reliable-texting-too</guid>
+            </item>
+        
+            <item>
+                <title>Double Update&amp;#58; Reply To Group Texts From PC And Change Drives In Remote Files</title>
+                <description>&lt;p&gt;We’ve got two great updates going out today. Here are the details:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/double_update/chrome_sms_group.png&quot; style=&quot;display:block;width:300px;float:right;margin:20px 25px 0 25px;box-shadow:0px 0px 8px 1px rgba(0, 0, 0, .25);&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;group-texting-support&quot;&gt;Group Texting Support&lt;/h4&gt;
+
+&lt;p&gt;Our latest Android update adds support for replying to group text messages from your computer or Android tablet. This has been a popular request for a long time so we’re really happy to have it ready to go.&lt;/p&gt;
+
+&lt;p&gt;Our Chrome extension, website, and Windows desktop app will start letting you reply to groups as soon as you have the latest Android update. Our Safari, Firefox, and Opera extensions have updates to enable group texting submitted for review today and should be available soon. (Replying to group texts does require your phone be running Android 5.0 Lollipop or later.)&lt;/p&gt;
+
+&lt;p&gt;Since replying to group texts is brand new, replies sent to groups won’t start to count against your free limit until January 1st. (You’ll be able to send group texts even if you’ve already hit your free message limit this month, too, so go give it a try!)&lt;/p&gt;
+
+&lt;div style=&quot;float:right;margin-top:-30px;margin-left:30px;&quot;&gt;
+    &lt;img src=&quot;/images/double_update/android_drives.png&quot; width=&quot;340&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;change-drives-in-remote-files&quot;&gt;Change Drives In Remote Files&lt;/h4&gt;
+
+&lt;p&gt;We added &lt;a href=&quot;/2015/12/09/browse-your-files-remotely-from-any-device/&quot;&gt;Remote Files&lt;/a&gt; last week which let you browse and request files from your other devices. The update was extremely well received which is great.&lt;/p&gt;
+
+&lt;p&gt;One piece of feedback we heard loud and clear was that you should be able to switch drives (from the C:\ drive to others like D:\ or E:\, etc). We took this feedback and got to work. Once you’ve got our latest update for Windows desktop and Android, you’ll be able to switch drives without any trouble.&lt;/p&gt;
+
+&lt;h4 id=&quot;happy-holidays&quot;&gt;Happy Holidays!&lt;/h4&gt;
+
+&lt;p&gt;The holidays are almost upon us now! This will probably be our last big update of 2015 and we’re really happy to have this update out before the end of the year—it gets Pushbullet to a great place to close out the year. We hope you agree.&lt;/p&gt;
+
+&lt;p&gt;2016 will be here in just a few short weeks. We hope you all have a great holiday season and we’ll see you back here soon for more great updates in 2016!&lt;/p&gt;
+</description>
+                <pubDate>Tue, 15 Dec 2015 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2015/12/15/double-update-reply-to-group-texts-from-pc-and-change-drives-in-remote-files</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2015/12/15/double-update-reply-to-group-texts-from-pc-and-change-drives-in-remote-files</guid>
+            </item>
+        
+            <item>
+                <title>Browse Your Files Remotely From Any Device</title>
+                <description>&lt;p class=&quot;center&quot; style=&quot;overflow:hidden;padding-bottom:10px;&quot;&gt;
+    &lt;img src=&quot;/images/remote_files/splash.png&quot; width=&quot;100%&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remote Files is a new Pushbullet feature that lets you browse and request files from any of your devices.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Forget a file on your work computer? No problem at all. With Remote Files, you can just go grab it using your phone and it will be pushed right to you. It’s super simple. The file doesn’t need to be in a special folder, you can browse and request any files.&lt;/p&gt;
+
+&lt;p&gt;It works the other direction too. You can also access your phone’s files from your computer or tablet. Remote Files makes everything just a tap or click away.&lt;/p&gt;
+
+&lt;p&gt;Best of all, your devices don’t need to be anywhere near eachother. Remote Files works even if devices are on the other side of the world.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center;margin-top:-20px;&quot;&gt;
+    &lt;img src=&quot;/images/remote_files/phone_1.png&quot; style=&quot;display:inline-block;margin:0;max-width:340px;&quot; /&gt;
+    &lt;img src=&quot;/images/remote_files/phone_2.png&quot; style=&quot;display:inline-block;margin:0;max-width:340px;&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align:center;margin-top:-25px;&quot;&gt;
+    &lt;img src=&quot;/images/remote_files/phone_3.png&quot; style=&quot;display:inline-block;margin:0;max-width:340px;&quot; /&gt;
+    &lt;img src=&quot;/images/remote_files/phone_4.png&quot; style=&quot;display:inline-block;margin:0;max-width:340px;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;This sounds awesome! Does it work even if the device is turned off?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For Remote Files to work, the device does need to be online. For smartphones and tablets, this is no problem at all. For desktops, this isn’t a big deal either since most desktops are simply left online as well. For laptops that fall asleep, however, Remote Files won’t be able to talk to them when they’re offline.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Makes sense. What devices are supported so far?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align:center;margin:40px;&quot;&gt;
+    &lt;img src=&quot;/images/remote_files/android.png&quot; width=&quot;100&quot; height=&quot;100&quot; style=&quot;margin:0 50px;&quot; /&gt;
+    &lt;img src=&quot;/images/remote_files/windows.png&quot; width=&quot;100&quot; height=&quot;100&quot; style=&quot;margin:0 50px;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Remote Files requires a native app to work. Right now it’s supported in the latest versions of our Android and Windows desktop apps. &lt;a href=&quot;https://www.pushbullet.com/apps&quot;&gt;Get the apps here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Great. How do I enable it?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Remote Files is disabled by default but can be enabled easily. On &lt;b&gt;Android&lt;/b&gt;, slide out the app drawer and tap &lt;em&gt;Settings&lt;/em&gt; and enable &lt;em&gt;Remote Files access&lt;/em&gt;. On &lt;b&gt;Windows desktop&lt;/b&gt;, open Settings and check the box next to &lt;em&gt;Remote Files access&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Can I use Remote Files for free or does it require a Pro account?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Remote Files is available to both free and Pro Pushbullet users. Those with a free account will be able to request a limited number of files per month. Upgrading to Pro will remove this limit. (&lt;a href=&quot;https://www.pushbullet.com/pro&quot;&gt;Free and Pro account&lt;/a&gt; file size limits apply.)&lt;/p&gt;
+
+&lt;p&gt;Since Remote Files is brand new, we are not enforcing the file request limit for free users this week. Try it out and see what you think!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remote Files is brand new so we’re excited to hear your feedback.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We’ll be watching the comments below or you can also reach us any time on the &lt;a href=&quot;http://www.reddit.com/r/pushbullet&quot;&gt;Pushbullet subreddit&lt;/a&gt;. We’d love to hear about how you’re using Remote Files so we can make it even better!&lt;/p&gt;
+</description>
+                <pubDate>Wed, 09 Dec 2015 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2015/12/09/browse-your-files-remotely-from-any-device</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2015/12/09/browse-your-files-remotely-from-any-device</guid>
+            </item>
+        
+            <item>
+                <title>Send Texts From Your Tablet</title>
+                <description>&lt;p&gt;&lt;strong&gt;This summer we added support for &lt;a href=&quot;/2015/07/15/sms-converstations-on-your-computer/&quot;&gt;texting from your computer&lt;/a&gt; and it was one of our most popular updates. Today we’re bringing this same feature to Android tablets!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;img src=&quot;/images/tablet_sms/tablet.png&quot; style=&quot;display:block;width:100%;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;div style=&quot;float:right;margin-top:-30px;margin-left:30px;&quot;&gt;
+    &lt;img src=&quot;/images/tablet_sms/setting.png&quot; width=&quot;340&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Texting from your Android tablet with Pushbullet is really simple. To get started, you will need to have Pushbullet set up on your phone and have SMS sync enabled there. Once you’ve got that set up, just tap SMS in our Android app’s menu on your tablet to start texting any time.&lt;/p&gt;
+
+&lt;p&gt;Your SMS threads show up on the left and clicking on a thread opens the conversation history. You can then send a text by simply typing a message and tapping send.&lt;/p&gt;
+
+&lt;p&gt;The text messages are sent from your tablet to your phone before being sent. This means they come from your phone number and the recipient never knows you’re sitting with your tablet. (This also means any SMS rates your carrier charges still apply to texts sent using Pushbullet on tablet.)&lt;/p&gt;
+
+&lt;p&gt;If you have more than one phone, you can select which device to send the text messages from using the selector on the top of the SMS screen.&lt;/p&gt;
+
+&lt;p&gt;Texting from your tablet is available to all Pushbullet users, though starting December 1st, &lt;a href=&quot;https://www.pushbullet.com/pro&quot;&gt;unlimited texting with Pushbullet does require a Pro account&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Get the latest version of &lt;a href=&quot;https://www.pushbullet.com/apps&quot;&gt;Pushbullet&lt;/a&gt; from the &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.pushbullet.android&quot;&gt;Play Store&lt;/a&gt; now to get texting from your tablet!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;PS: We’re doing an AMA (Ask Me Anything) on the &lt;a href=&quot;https://www.reddit.com/r/android&quot;&gt;Android subreddit&lt;/a&gt; today. Join us there to talk about Pushbullet Pro and anything else on your mind!&lt;/p&gt;
+</description>
+                <pubDate>Fri, 20 Nov 2015 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2015/11/20/send-texts-from-your-tablet</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2015/11/20/send-texts-from-your-tablet</guid>
+            </item>
+        
+            <item>
+                <title>Introducing Pushbullet Pro</title>
+                <description>&lt;p class=&quot;center&quot; style=&quot;overflow:hidden;padding-bottom:10px;&quot;&gt;
+    &lt;a href=&quot;https://www.pushbullet.com/pro&quot;&gt;
+        &lt;img src=&quot;/images/pro/splash.png&quot; width=&quot;100%&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Pushbullet has come a long way since &lt;a href=&quot;/2013/01/20/hello-pushbullet/&quot;&gt;we got started two years ago&lt;/a&gt;. Our goal has been to create a useful and easy to use app that makes smartphones and computers feel more connected. We’ve been pretty successful, too—we’ve had millions of people sign up so far.&lt;/p&gt;
+
+&lt;p&gt;One question we’ve gotten more and more as we’ve gained popularity is, “How does Pushbullet make money?” Today we are answering that question—Pushbullet makes money by offering features worth paying for.&lt;/p&gt;
+
+&lt;div style=&quot;float:right;margin:0 30px 0 50px;&quot;&gt;
+    &lt;img src=&quot;/images/pro/ribbon.png&quot; width=&quot;100&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;what-is-pushbullet-pro&quot;&gt;What is Pushbullet Pro?&lt;/h4&gt;
+
+&lt;p&gt;Pushbullet Pro is an optional premium account that has features not available to free Pushbullet accounts. Some previously free features do now require a Pro account. &lt;a href=&quot;https://www.pushbullet.com/pro&quot;&gt;See the comparison here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;why-have-pro-accounts&quot;&gt;Why have Pro accounts?&lt;/h4&gt;
+
+&lt;p&gt;Pushbullet costs money to run so the question is, how should Pushbullet pay its bills? We have chosen optional paid accounts because we believe this ensures the best Pushbullet for everyone.&lt;/p&gt;
+
+&lt;p&gt;We could have kept Pushbullet completely free, following the path of many free services by showing ads and selling data to make money. We don’t want to do that. We never want to hurt the Pushbullet experience with ads or betraying your trust by selling your data. Since Pushbullet must support itself, we want to do that by having you as our customer.&lt;/p&gt;
+
+&lt;h4 id=&quot;why-should-i-upgrade&quot;&gt;Why should I upgrade?&lt;/h4&gt;
+
+&lt;p&gt;You should upgrade because you want &lt;a href=&quot;https://www.pushbullet.com/pro&quot;&gt;the benefits of a Pushbullet Pro account&lt;/a&gt;. Or because you want to ensure that we continue to add more features and support for more platforms. Or because you want us to continue to improve features like &lt;a href=&quot;/2014/08/20/introducing-universal-copy-and-paste/&quot;&gt;Universal copy &amp;amp; paste&lt;/a&gt; and &lt;a href=&quot;/2015/07/15/sms-converstations-on-your-computer/&quot;&gt;SMS on your computer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should upgrade because you like that Pushbullet supports &lt;a href=&quot;/2015/08/11/end-to-end-encryption/&quot;&gt;end-to-end encryption&lt;/a&gt; and respects your privacy. You should upgrade because you want a great app to continue to get better.&lt;/p&gt;
+
+&lt;h4 id=&quot;when-do-pro-accounts-start&quot;&gt;When do Pro accounts start?&lt;/h4&gt;
+
+&lt;p&gt;You can sign up for a Pro account right now, but accounts will not be charged until December 1st. At that time, features that require a Pro account will no longer be available to free users.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-bright-future-for-pushbullet&quot;&gt;A bright future for Pushbullet&lt;/h4&gt;
+
+&lt;p&gt;Pushbullet Pro means a lot to us. Most importantly, it means that we can focus entirely on improving Pushbullet because that’s how Pushbullet will grow. These improvements will be additional features, increased reliablity, support for more platforms, deeper integrations, more API support, additional privacy options, and much more. We’re really excited about this.&lt;/p&gt;
+
+&lt;p&gt;We will be making Pushbullet better for our free and Pro users. For our Pro users, we’re excited to build the advanced features you ask for. For those using Pushbullet without a Pro account, Pushbullet will only get better from here on for you as well. This is important to us.&lt;/p&gt;
+
+&lt;p&gt;We believe a thriving Pushbullet is a Pushbullet supported by and focused on its community. We hope to have you onboard.&lt;/p&gt;
+
+&lt;div style=&quot;margin:40px 26px 70px 26px;text-align:center;&quot;&gt;
+    &lt;div&gt;
+        &lt;a href=&quot;https://www.pushbullet.com/pro&quot; style=&quot;display:inline-block;background-color:#4ab367;color:white;font-weight:bold;padding:10px 35px;border-radius:2px;font-size:19px;box-shadow:0 1px 4px rgba(0, 0, 0, .5);text-decoration:none;&quot; onmouseover=&quot;this.style.backgroundColor=&#39;#38a06d&#39;;&quot; onmouseout=&quot;this.style.backgroundColor=&#39;#4ab367&#39;;&quot;&gt;Upgrade now!&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Tue, 17 Nov 2015 00:00:00 -0600</pubDate>
+                <link>https://blog.pushbullet.com/2015/11/17/introducing-pushbullet-pro</link>
+                <guid isPermaLink="true">http://blog.pushbullet.com/2015/11/17/introducing-pushbullet-pro</guid>
+            </item>
+        
+    </channel>
+</rss>
