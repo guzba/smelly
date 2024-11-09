@@ -93,7 +93,7 @@ echo '"', root.children[0].content, '"' # "1 or 2"
 
 ## Performance
 
-Smelly is between 2x and 10x faster than `std/xmlparser` depending on the XML input.
+Smelly is between 2x and 7x faster than `std/xmlparser` depending on the XML input.
 
 See `tests/bench.nim` to test this for yourself.
 
