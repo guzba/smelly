@@ -17,6 +17,7 @@ const
   cdataStart = "<![CDATA["
   cdataEnd = "]]>"
   doctypeStart = "<!DOCTYPE"
+  commentStart = "<!--"
 
 type XmlElement* = ref object
   tag*: string
@@ -24,41 +25,19 @@ type XmlElement* = ref object
   content*: string
   children*: seq[XmlElement]
 
-proc stringify(element: XmlElement, indentation: int): string =
-
-  template indent(s: var string, spaces: int) =
-    for _ in 0 ..< spaces:
-      result.add ' '
-
-  result.indent(indentation)
-  result.add '<'
-  result.add element.tag
+proc `$`*(element: XmlElement): string =
+  result.add '<' & element.tag
   for (name, value) in element.attributes:
-    result.add ' '
-    result.add name
-    result.add '='
-    result.add '"'
-    result.add value
-    result.add '"'
+    result.add ' ' & name & "=\"" & value & '"'
   if element.content == "" and element.children.len == 0:
-    result.add ' '
-    result.add '/'
-    result.add '>'
+    result.add " />"
   else:
     result.add '>'
-    result.add '\n'
     if element.content != "":
-      result.indent(indentation + 2)
       result.add element.content
-      result.add '\n'
     for child in element.children:
-      result.add stringify(child, indentation + 2)
-      result.add '\n'
-    result.indent(indentation)
+      result.add $child
     result.add '<' & '/' & element.tag & '>'
-
-proc `$`*(element: XmlElement): string =
-  stringify(element, 0)
 
 template error(msg: string) =
   raise newException(CatchableError, msg)
@@ -78,13 +57,28 @@ template badEntity(input, i) =
 # when defined(release):
 #   {.push checks: off.}
 
-proc startsWithAsciiIgnoreCase*(a, b: openarray[char]): bool =
-  if b.len > a.len:
-    return false
-  for i in 0 ..< b.len:
-    if ord(toLowerAscii(a[i])) != ord(toLowerAscii(b[i])):
-      return false
-  return true
+proc startsWith(a, b: openarray[char]): bool =
+  if b.len == 0:
+    true
+  elif b.len > a.len:
+    false
+  else:
+    equalMem(a[0].addr, b[0].addr, b.len)
+
+proc startsWithXmlDeclaration(s: openarray[char]): bool =
+  const xml = "<?xml"
+  if s.len <= xml.len:
+    eof()
+  elif not s.startsWith("<?"):
+    false
+  elif s[2] notin {'x', 'X'}:
+    false
+  elif s[3] notin {'m', 'M'}:
+    false
+  elif s[4] notin {'l', 'L'}:
+    false
+  else:
+    true
 
 proc skipWhitespace(
   input: string,
@@ -223,16 +217,10 @@ proc readAttribute(input: string, i: var int): (string, string) =
   result[1] = readValue(input, i)
 
 proc skipProcessingInstruction(input: string, i: var int) =
-  if not startsWithAsciiIgnoreCase(
-    input.toOpenArray(i, input.high),
-    "<?"
-  ):
+  if not startsWith(input.toOpenArray(i, input.high),"<?"):
     badXml(input, i)
 
-  if startsWithAsciiIgnoreCase(
-    input.toOpenArray(i, input.high),
-    "<?xml"
-  ):
+  if startsWithXmlDeclaration(input.toOpenArray(i, input.high)):
     error("Invalid processing instruction target at byte offset " & $i)
 
   i += 2
@@ -252,10 +240,7 @@ proc skipProcessingInstruction(input: string, i: var int) =
   inc i
 
 proc skipComment(input: string, i: var int) =
-  if not startsWithAsciiIgnoreCase(
-    input.toOpenArray(i, input.high),
-    "<!--"
-  ):
+  if not startsWith(input.toOpenArray(i, input.high), commentStart):
     badXml(input, i)
 
   i += 4
@@ -280,10 +265,7 @@ proc skipComment(input: string, i: var int) =
     break
 
 proc skipDoctypeDefinition(input: string, i: var int) =
-  if not startsWithAsciiIgnoreCase(
-    input.toOpenArray(i, input.high),
-    doctypeStart
-  ):
+  if not startsWith(input.toOpenArray(i, input.high), doctypeStart):
     badXml(input, i)
 
   if i + doctypeStart.len > input.len:
@@ -303,10 +285,8 @@ proc skipDoctypeDefinition(input: string, i: var int) =
   i = x + 1
 
 proc skipProlog(input: string, i: var int) =
-  if not startsWithAsciiIgnoreCase(
-    input.toOpenArray(i, input.high),
-    "<?xml"
-  ):
+  if not startsWithXmlDeclaration(input.toOpenArray(i, input.high)):
+    # Optional
     return
 
   i += 5
@@ -319,7 +299,7 @@ proc skipProlog(input: string, i: var int) =
       (name, value) = readAttribute(input, i)
     if cmpIgnoreCase(name, "version") != 0:
       badXml(input, start)
-    if not startsWithAsciiIgnoreCase(value, "1."):
+    elif not startsWith(value, "1."):
       badXml(input, i - value.len)
 
   # Skip any additional attributes
@@ -450,7 +430,7 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
       of '/':
         if i + tag.len + 2 >= input.len:
           eof()
-        elif startsWithAsciiIgnoreCase(
+        elif startsWith(
           input.toOpenArray(i + 2, input.high),
           tag
         ):
