@@ -19,6 +19,7 @@ const
   doctypeStart = "<!DOCTYPE"
   commentStart = "<!--"
   piStart = "<?"
+  piEnd = "?>"
 
 type XmlElement* = ref object
   tag*: string
@@ -190,17 +191,11 @@ proc readValue(input: string, i: var int): string =
 
   inc i
 
-  let start = i
-  while true:
-    if i >= input.len:
-      eof()
-    if input[i] == q:
-      break
-    inc i
+  let e = input.find(q, start = i)
 
-  result = decodeCharData(input, start, i - start)
+  result = decodeCharData(input, i, e - i)
 
-  inc i # Skip closing ' or "
+  i = e + 1
 
 proc readAttribute(input: string, i: var int): (string, string) =
   let e = input.find('=', start = i)
@@ -229,15 +224,10 @@ proc skipProcessingInstruction(input: string, i: var int) =
   if q == -1:
     eof()
 
-  i = q + 1
+  if not startsWith(input.toOpenArray(q, input.high), piEnd):
+    badXml(input, q)
 
-  if i >= input.len:
-    eof()
-
-  if input[i] != '>':
-    badXml(input, i)
-
-  inc i
+  i = q + piEnd.len
 
 proc skipComment(input: string, i: var int) =
   if not startsWith(input.toOpenArray(i, input.high), commentStart):
@@ -266,12 +256,6 @@ proc skipComment(input: string, i: var int) =
 
 proc skipDoctypeDefinition(input: string, i: var int) =
   if not startsWith(input.toOpenArray(i, input.high), doctypeStart):
-    badXml(input, i)
-
-  if i + doctypeStart.len > input.len:
-    eof()
-
-  if not equalMem(input[i].addr, doctypeStart.cstring, doctypeStart.len):
     badXml(input, i)
 
   i += doctypeStart.len
@@ -326,18 +310,10 @@ proc skipProlog(input: string, i: var int) =
     else:
       error("Invalid attribute name at byte offset " & $start)
 
-  if input[i] != '?':
+  if not startsWith(input.toOpenArray(i, input.high), piEnd):
     badXml(input, i)
 
-  inc i
-
-  if i >= input.len:
-    eof()
-
-  if input[i] != '>':
-    badXml(input, i)
-
-  inc i
+  i += piEnd.len
 
   # Skip any processing instructions, comments and doctype definitions
   while true:
@@ -417,10 +393,7 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
       of '/':
         if i + tag.len + 2 >= input.len:
           eof()
-        elif startsWith(
-          input.toOpenArray(i + 2, input.high),
-          tag
-        ):
+        elif startsWith(input.toOpenArray(i + 2, input.high), tag):
           i += tag.len + 3
           return XmlElement(
             tag: move tag,
@@ -433,9 +406,7 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
       of '?':
         skipProcessingInstruction(input, i)
       of '!':
-        if i + 2 > input.len:
-          eof()
-        if input[i + 2] == '[':
+        if startsWith(input.toOpenArray(i, input.high), cdataStart):
           if content != "":
             badXml(input, i)
           content = readCdata(input, i)
