@@ -103,19 +103,23 @@ proc decodeCharData(input: string, start, len: int): string =
       if entityLen == 0:
         badXml(input, x)
       elif input[offset + 1] == '#':
-
-
-
-
-
-        discard
-
-
-
-
-
-
-
+        var
+          asdf = offset + 2
+          n: int
+        while asdf < x:
+          if asdf >= input.len:
+            eof()
+          let c = input[asdf]
+          if c in {'0'..'9'}:
+            n = n * 10 + (ord(c) - ord('0'))
+          else:
+            badEntity(input, offset)
+        if n > int32.high:
+          badEntity(input, offset)
+        let rune = Rune(cast[int32](n))
+        if not rune.isValid:
+          badEntity(input, offset)
+        result.unsafeAdd rune
       elif entityLen == 2:
         if equalMem(input[offset + 1].addr, ltEntity.cstring, 2):
           result.add '<'
