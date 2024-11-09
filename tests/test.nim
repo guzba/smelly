@@ -1,6 +1,6 @@
 import smelly
 
-parseXml(readFile("tests/data/ellipse01.svg"))
+echo parseXml(readFile("tests/data/feed.xml"))
 
 
 # <?xml version="1.0"?>

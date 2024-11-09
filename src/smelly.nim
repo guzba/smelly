@@ -4,7 +4,13 @@ from std/strutils import find, toLowerAscii, cmpIgnoreCase
 
 # https://www.w3.org/TR/xml/
 
-const whitespace = {' ', '\n', '\r', '\t'}
+const
+  whitespace = {' ', '\n', '\r', '\t'}
+  ltEntity = "lt"
+  gtEntity = "gt"
+  ampEntity = "amp"
+  aposEntity = "apos"
+  quotEntity = "quot"
 
 type XmlElement* = ref object
   tag*: string
@@ -60,6 +66,9 @@ template missingRequiredWhitespace(input, i) =
 template badXml(input, i) =
   error("Unexpected " & input[i] & " at byte offset " & $i)
 
+template badEntity(input, i) =
+  error("Bad entity at byte offset " & $i)
+
 proc startsWithAsciiIgnoreCase*(a, b: openarray[char]): bool =
   if b.len > a.len:
     return false
@@ -78,6 +87,58 @@ proc skipWhitespace(
     inc i
   if required and start == i:
     missingRequiredWhitespace(input, i)
+
+
+
+proc decodeCharData(input: string, start, len: int): string =
+  var offset = start
+  while offset < start + len:
+    if input[offset] == '&':
+      let x = input.find(';', start = offset + 1)
+      if x == -1:
+        eof()
+      let entityLen = x - (offset + 1)
+      if entityLen == 0:
+        badXml(input, x)
+      elif input[offset + 1] == '#':
+
+
+
+
+
+        discard
+
+
+
+
+
+
+
+      elif entityLen == 2:
+        if equalMem(input[offset + 1].addr, ltEntity.cstring, 2):
+          result.add '<'
+        elif equalMem(input[offset + 1].addr, gtEntity.cstring, 2):
+          result.add '>'
+        else:
+          badEntity(input, offset)
+      elif entityLen == 3:
+        if equalMem(input[offset + 1].addr, ampEntity.cstring, 3):
+          result.add '&'
+        else:
+          badEntity(input, offset)
+      elif entityLen == 4:
+        if equalMem(input[offset + 1].addr, quotEntity.cstring, 4):
+          result.add '"'
+        elif equalMem(input[offset + 1].addr, aposEntity.cstring, 4):
+          result.add '\''
+        else:
+          badEntity(input, offset)
+      else:
+        badEntity(input, offset)
+      offset = x + 1
+    else:
+      result.add input[offset]
+      inc offset
 
 proc readValue(input: string, i: var int): string =
   if i >= input.len:
@@ -98,9 +159,8 @@ proc readValue(input: string, i: var int): string =
       break
     inc i
 
-  let len = i - start
-  result.setLen(len)
-  copyMem(result.cstring, input[start].addr, len)
+  result = decodeCharData(input, start, i - start)
+
   inc i # Skip closing ' or "
 
 proc readAttribute(input: string, i: var int): (string, string) =
@@ -349,7 +409,6 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
             children: move children
           )
         else:
-          echo tag, ' ', input[i + 2 ..< i + 10]
           badXml(input, i + 2)
       elif input[i + 1] == '?':
         skipProcessingInstruction(input, i)
@@ -358,14 +417,15 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
       else:
         children.add(parseElement(input, i, depth + 1))
     else:
+      if content != "":
+        badXml(input, i)
       let x = input.find('<', start = i)
       if x == -1:
         eof()
-      content.setLen(x - i)
-      copyMem(content.cstring, input[i].addr, content.len)
+      content = decodeCharData(input, i, x - i)
       i = x
 
-proc parseXml*(input: string) {.gcsafe.} =
+proc parseXml*(input: string): XmlElement {.gcsafe.} =
   let invalidAt = validateUtf8(input)
   if invalidAt != -1:
     error("Invalid UTF-8 character at " & $invalidAt)
@@ -376,11 +436,7 @@ proc parseXml*(input: string) {.gcsafe.} =
 
   skipProlog(input, i)
 
-  let root = parseElement(input, i, 0)
-
-
-  echo root
-
+  result = parseElement(input, i, 0)
 
   # Skip any trailing processing instructions and comments
   while true:
