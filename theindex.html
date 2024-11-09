@@ -28,7 +28,7 @@
       Modules: <a href="smelly.html">smelly</a>, <a href="smelly/xmlattributes.html">smelly/xmlattributes</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="%60%24%60" href="#%60%24%60"><span>`$`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="smelly: proc `$`(element: XmlElement): string" href="smelly.html#%24%2CXmlElement">smelly: proc `$`(element: XmlElement): string</a></li>
+          data-doc-search-tag="smelly: proc `$`(node: XmlNode): string" href="smelly.html#%24%2CXmlNode">smelly: proc `$`(node: XmlNode): string</a></li>
           <li><a class="reference external"
           data-doc-search-tag="xmlattributes: proc `$`(attributes: XmlAttributes): string" href="smelly/xmlattributes.html#%24%2CXmlAttributes">xmlattributes: proc `$`(attributes: XmlAttributes): string</a></li>
           </ul></dd>
@@ -48,6 +48,10 @@
 <li><a class="reference external"
           data-doc-search-tag="xmlattributes: proc contains(attributes: XmlAttributes; key: string): bool" href="smelly/xmlattributes.html#contains%2CXmlAttributes%2Cstring">xmlattributes: proc contains(attributes: XmlAttributes; key: string): bool</a></li>
           </ul></dd>
+<dt><a name="ElementNode" href="#ElementNode"><span>ElementNode:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="smelly: XmlNodeKind.ElementNode" href="smelly.html#ElementNode">smelly: XmlNodeKind.ElementNode</a></li>
+          </ul></dd>
 <dt><a name="emptyXmlAttributes" href="#emptyXmlAttributes"><span>emptyXmlAttributes:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="xmlattributes: proc emptyXmlAttributes(): XmlAttributes" href="smelly/xmlattributes.html#emptyXmlAttributes">xmlattributes: proc emptyXmlAttributes(): XmlAttributes</a></li>
@@ -58,7 +62,11 @@
           </ul></dd>
 <dt><a name="parseXml" href="#parseXml"><span>parseXml:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="smelly: proc parseXml(input: string): XmlElement" href="smelly.html#parseXml%2Cstring">smelly: proc parseXml(input: string): XmlElement</a></li>
+          data-doc-search-tag="smelly: proc parseXml(input: string): XmlNode" href="smelly.html#parseXml%2Cstring">smelly: proc parseXml(input: string): XmlNode</a></li>
+          </ul></dd>
+<dt><a name="TextNode" href="#TextNode"><span>TextNode:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="smelly: XmlNodeKind.TextNode" href="smelly.html#TextNode">smelly: XmlNodeKind.TextNode</a></li>
           </ul></dd>
 <dt><a name="toBase" href="#toBase"><span>toBase:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -70,15 +78,19 @@
 <li><a class="reference external"
           data-doc-search-tag="xmlattributes: type XmlAttributes" href="smelly/xmlattributes.html#XmlAttributes">xmlattributes: type XmlAttributes</a></li>
           </ul></dd>
-<dt><a name="XmlElement" href="#XmlElement"><span>XmlElement:</span></a></dt><dd><ul class="simple">
+<dt><a name="XmlNode" href="#XmlNode"><span>XmlNode:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="smelly: type XmlElement" href="smelly.html#XmlElement">smelly: type XmlElement</a></li>
+          data-doc-search-tag="smelly: type XmlNode" href="smelly.html#XmlNode">smelly: type XmlNode</a></li>
+          </ul></dd>
+<dt><a name="XmlNodeKind" href="#XmlNodeKind"><span>XmlNodeKind:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="smelly: enum XmlNodeKind" href="smelly.html#XmlNodeKind">smelly: enum XmlNodeKind</a></li>
           </ul></dd>
 </dl>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2024-11-09 14:40:39 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2024-11-09 16:16:42 UTC</small>
       </div>
     </div>
   </div>

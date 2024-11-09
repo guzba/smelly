@@ -1,4 +1,7 @@
 nimTitle	smelly	smelly.html	module src/smelly		0
-nim	XmlElement	smelly.html#XmlElement	type XmlElement		24
-nim	`$`	smelly.html#$,XmlElement	proc `$`(element: XmlElement): string		30
-nim	parseXml	smelly.html#parseXml,string	proc parseXml(input: string): XmlElement		426
+nim	ElementNode	smelly.html#ElementNode	XmlNodeKind.ElementNode		27
+nim	TextNode	smelly.html#TextNode	XmlNodeKind.TextNode		27
+nim	XmlNodeKind	smelly.html#XmlNodeKind	enum XmlNodeKind		27
+nim	XmlNode	smelly.html#XmlNode	type XmlNode		30
+nim	`$`	smelly.html#$,XmlNode	proc `$`(node: XmlNode): string		39
+nim	parseXml	smelly.html#parseXml,string	proc parseXml(input: string): XmlNode		437
