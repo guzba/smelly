@@ -1,6 +1,6 @@
 version     = "0.1.0"
 author      = "Ryan Oldenburg"
-description = "Description of your library"
+description = "Sometimes you have to parse XML"
 license     = "MIT"
 
 srcDir = "src"
