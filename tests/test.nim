@@ -4,6 +4,24 @@ echo parseXml(readFile("tests/data/ellipse01.svg"))
 # echo parseXml(readFile("tests/data/feed.xml"))
 # echo parseXml(readFile("tests/data/apkmirror.xml"))
 
+# block:
+#   let s = """
+#   <?xml version="1.0" encoding="UTF-8" ?>
+#   <root>
+#     <tag>
+#       <test arg="blah" arg2="test"/>
+#       <test2>
+#         bla ah absy hsh
+#         hsh
+#         &woohoo;
+#         sjj
+#       </test2>
+#       <test><teh>bla</teh></test>
+#     </tag>
+#   </root>
+#   """
+#   echo parseXml(s)
+
 
 # <?xml version="1.0"?>
 # <?xml   version="1.0" ?>
