@@ -18,6 +18,7 @@ const
   cdataEnd = "]]>"
   doctypeStart = "<!DOCTYPE"
   commentStart = "<!--"
+  piStart = "<?"
 
 type XmlElement* = ref object
   tag*: string
@@ -66,10 +67,9 @@ proc startsWith(a, b: openarray[char]): bool =
     equalMem(a[0].addr, b[0].addr, b.len)
 
 proc startsWithXmlDeclaration(s: openarray[char]): bool =
-  const xml = "<?xml"
-  if s.len <= xml.len:
+  if s.len < 5:
     eof()
-  elif not s.startsWith("<?"):
+  elif not equalMem(s[0].addr, piStart.cstring, piStart.len):
     false
   elif s[2] notin {'x', 'X'}:
     false
@@ -217,7 +217,7 @@ proc readAttribute(input: string, i: var int): (string, string) =
   result[1] = readValue(input, i)
 
 proc skipProcessingInstruction(input: string, i: var int) =
-  if not startsWith(input.toOpenArray(i, input.high),"<?"):
+  if not startsWith(input.toOpenArray(i, input.high), piStart):
     badXml(input, i)
 
   if startsWithXmlDeclaration(input.toOpenArray(i, input.high)):
@@ -343,27 +343,14 @@ proc skipProlog(input: string, i: var int) =
   while true:
     skipWhitespace(input, i)
 
-    if i == input.len:
-      break
-
-    if i + 2 > input.len:
-      eof()
-
-    if input[i] != '<':
-      badXml(input, i)
-
-    case input[i + 1]:
-    of '?':
+    if startsWith(input.toOpenArray(i, input.high), commentStart):
+      skipComment(input, i)
+    elif startsWith(input.toOpenArray(i, input.high), piStart):
       skipProcessingInstruction(input, i)
-    of '!':
-      if input[i + 2] == '-':
-        skipComment(input, i)
-      elif input[i + 2] == 'D':
-        skipDoctypeDefinition(input, i)
-      else:
-        badXml(input, i + 2)
+    elif startsWith(input.toOpenArray(i, input.high), doctypeStart):
+      skipDoctypeDefinition(input, i)
     else:
-      break # Done with prolog
+      break
 
 proc parseElement(input: string, i: var int, depth: int): XmlElement =
   const maxDepth = 100
@@ -482,20 +469,10 @@ proc parseXml*(input: string): XmlElement {.gcsafe.} =
   while true:
     skipWhitespace(input, i)
 
-    if i == input.len:
-      break
-
-    if i + 2 > input.len:
-      eof()
-
-    if input[i] != '<':
-      badXml(input, i)
-
-    case input[i + 1]:
-    of '?':
-      skipProcessingInstruction(input, i)
-    of '!':
+    if startsWith(input.toOpenArray(i, input.high), commentStart):
       skipComment(input, i)
+    elif startsWith(input.toOpenArray(i, input.high), piStart):
+      skipProcessingInstruction(input, i)
     else:
       break
 
