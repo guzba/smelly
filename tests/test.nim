@@ -1,7 +1,48 @@
+# import std/xmlparser, std/xmltree
+
+# block:
+#   let root = parseXml("<thing>1 &lt; 2</thing>")
+#   echo root.tag # thing
+#   echo root.len # 4 ?????
+#   echo '"', root[0], '"' # "1 " ?????
+
+# block:
+#   let root = parseXml("<thing>1 or 2</thing>")
+#   echo root.tag # thing
+#   echo root.len # 1
+#   echo '"', root[0], '"' # "1 or 2"
+
+# import smelly
+
+# block:
+#   let root = parseXml("<thing>1 &lt; 2</thing>")
+#   echo root.tag # thing
+#   echo root.children.len # 1
+#   echo '"', root.children[0].content, '"' # "1 < 2"
+
+# block:
+#   let root = parseXml("<thing>1 or 2</thing>")
+#   echo root.tag # thing
+#   echo root.children.len # 1
+#   echo '"', root.children[0].content, '"' # "1 or 2"
+
 import smelly
 
-echo parseXml(readFile("tests/data/ellipse01.svg"))
-# echo parseXml(readFile("tests/data/feed.xml"))
+block:
+  let root = parseXml("<thing>a<b></b>c</thing>")
+  echo root
+
+
+
+
+# echo parseXml(readFile("tests/data/ellipse01.svg"))
+# let root = parseXml(readFile("tests/data/feed.xml"))
+# echo root[0][4][1].tag
+# echo root[0][4][1].len
+
+
+
+
 # echo parseXml(readFile("tests/data/apkmirror.xml"))
 
 # block:

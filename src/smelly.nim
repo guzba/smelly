@@ -5,6 +5,8 @@ when defined(amd64):
 
 from std/strutils import find, toLowerAscii, cmpIgnoreCase
 
+export xmlattributes
+
 # https://www.w3.org/TR/xml/
 
 const
@@ -21,25 +23,34 @@ const
   piStart = "<?"
   piEnd = "?>"
 
-type XmlElement* = ref object
-  tag*: string
-  attributes*: XmlAttributes
-  content*: string
-  children*: seq[XmlElement]
+type
+  XmlNodeKind* = enum
+    ElementNode, TextNode
 
-proc `$`*(element: XmlElement): string =
-  result.add '<' & element.tag
-  for (name, value) in element.attributes:
-    result.add ' ' & name & "=\"" & value & '"'
-  if element.content == "" and element.children.len == 0:
-    result.add " />"
-  else:
-    result.add '>'
-    if element.content != "":
-      result.add element.content
-    for child in element.children:
-      result.add $child
-    result.add '<' & '/' & element.tag & '>'
+  XmlNode* = ref object
+    case kind*: XmlNodeKind
+    of ElementNode:
+      tag*: string
+      attributes*: XmlAttributes
+      children*: seq[XmlNode]
+    of TextNode:
+      content*: string
+
+proc `$`*(node: XmlNode): string =
+  case node.kind:
+  of ElementNode:
+    result.add '<' & node.tag
+    for (name, value) in node.attributes:
+      result.add ' ' & name & "=\"" & value & '"'
+    if node.children.len == 0:
+      result.add " />"
+    else:
+      result.add '>'
+      for child in node.children:
+        result.add $child
+      result.add '<' & '/' & node.tag & '>'
+  of TextNode:
+    result.add node.content
 
 template error(msg: string) =
   raise newException(CatchableError, msg)
@@ -328,10 +339,10 @@ proc skipProlog(input: string, i: var int) =
     else:
       break
 
-proc parseElement(input: string, i: var int, depth: int): XmlElement =
+proc parseNode(input: string, i: var int, depth: int): XmlNode =
   const maxDepth = 100
   if depth > maxDepth:
-    error("Child element depth exceeded max of " & $maxDepth)
+    error("Child node depth exceeded max of " & $maxDepth)
 
   if i >= input.len:
     eof()
@@ -372,15 +383,13 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
     elif input[i + 1] != '>':
       badXml(input, i + 1)
     i += 2
-    return XmlElement(tag: move tag, attributes: move attributes)
+    return XmlNode(kind: ElementNode, tag: move tag, attributes: move attributes)
   elif input[i] == '>':
     inc i
   else:
     badXml(input, i)
 
-  var
-    content: string
-    children: seq[XmlElement]
+  var children: seq[XmlNode]
   while true:
     skipWhitespace(input, i)
 
@@ -394,11 +403,17 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
         if i + tag.len + 2 >= input.len:
           eof()
         elif startsWith(input.toOpenArray(i + 2, input.high), tag):
-          i += tag.len + 3
-          return XmlElement(
+          i += tag.len + 2
+          skipWhitespace(input, i)
+          if i >= input.len:
+            eof()
+          if input[i] != '>':
+            badXml(input, i)
+          inc i
+          return XmlNode(
+            kind: ElementNode,
             tag: move tag,
             attributes: move attributes,
-            content: move content,
             children: move children
           )
         else:
@@ -407,23 +422,19 @@ proc parseElement(input: string, i: var int, depth: int): XmlElement =
         skipProcessingInstruction(input, i)
       of '!':
         if startsWith(input.toOpenArray(i, input.high), cdataStart):
-          if content != "":
-            badXml(input, i)
-          content = readCdata(input, i)
+          children.add(XmlNode(kind: TextNode, content: readCdata(input, i)))
         else:
           skipComment(input, i)
       else:
-        children.add(parseElement(input, i, depth + 1))
+        children.add(parseNode(input, i, depth + 1))
     else:
-      if content != "":
-        badXml(input, i)
       let x = input.find('<', start = i)
       if x == -1:
         eof()
-      content = decodeCharData(input, i, x - i)
+      children.add(XmlNode(kind: TextNode, content: decodeCharData(input, i, x - i)))
       i = x
 
-proc parseXml*(input: string): XmlElement {.gcsafe.} =
+proc parseXml*(input: string): XmlNode {.gcsafe.} =
   let invalidAt = validateUtf8(input)
   if invalidAt != -1:
     error("Invalid UTF-8 character at " & $invalidAt)
@@ -434,7 +445,7 @@ proc parseXml*(input: string): XmlElement {.gcsafe.} =
 
   skipProlog(input, i)
 
-  result = parseElement(input, i, 0)
+  result = parseNode(input, i, 0)
 
   # Skip any trailing processing instructions and comments
   while true:
