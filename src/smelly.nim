@@ -75,6 +75,9 @@ template badXml(input, i) =
 template badEntity(input, i) =
   error("Bad entity at byte offset " & $i)
 
+# when defined(release):
+#   {.push checks: off.}
+
 proc startsWithAsciiIgnoreCase*(a, b: openarray[char]): bool =
   if b.len > a.len:
     return false
@@ -518,3 +521,6 @@ proc parseXml*(input: string): XmlElement {.gcsafe.} =
 
   if i != input.len:
     badXml(input, i)
+
+# when defined(release):
+#   {.pop.}
