@@ -16,6 +16,7 @@ const
   quotEntity = "quot"
   cdataStart = "<![CDATA["
   cdataEnd = "]]>"
+  doctypeStart = "<!DOCTYPE"
 
 type XmlElement* = ref object
   tag*: string
@@ -108,7 +109,6 @@ proc decodeCharData(input: string, start, len: int): string =
           mm_storeu_si128(result[z].addr, tmp)
           offset += 16
         else:
-          f = true
           offset += firstSetBit(mask) - 1
           break
 
@@ -165,7 +165,7 @@ proc decodeCharData(input: string, start, len: int): string =
       inc offset
 
 proc readCdata(input: string, i: var int): string =
-  if i + 9 > input.len:
+  if i + cdataStart.len > input.len:
     eof()
   elif not equalMem(input[i].addr, cdataStart.cstring, 9):
     badXml(input, i)
@@ -279,11 +279,17 @@ proc skipComment(input: string, i: var int) =
 proc skipDoctypeDefinition(input: string, i: var int) =
   if not startsWithAsciiIgnoreCase(
     input.toOpenArray(i, input.high),
-    "<!DOCTYPE"
+    doctypeStart
   ):
     badXml(input, i)
 
-  i += 9
+  if i + doctypeStart.len > input.len:
+    eof()
+
+  if not equalMem(input[i].addr, doctypeStart.cstring, doctypeStart.len):
+    badXml(input, i)
+
+  i += doctypeStart.len
 
   skipWhitespace(input, i, required = true)
 

@@ -1,6 +1,7 @@
 import smelly
 
-echo parseXml(readFile("tests/data/feed.xml"))
+echo parseXml(readFile("tests/data/ellipse01.svg"))
+# echo parseXml(readFile("tests/data/feed.xml"))
 # echo parseXml(readFile("tests/data/apkmirror.xml"))
 
 
