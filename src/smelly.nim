@@ -37,6 +37,8 @@ type
       content*: string
 
 proc `$`*(node: XmlNode): string =
+  ## This does NOT currently produce correctly encoded XML and is here
+  ## mostly to enable debugging.
   case node.kind:
   of ElementNode:
     result.add '<' & node.tag
