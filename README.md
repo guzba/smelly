@@ -40,9 +40,9 @@ Some text content here
 
 ## Why create an alternative?
 
-I have found std/xml works ways I find frustrating.
+After working with Nim's standard lib XML parsing for a while I have found some sources of frustration that I want to avoid.
 
-Nim's std/xmltree uses `[]` on an element to access it's children and uses `.attr[]` to access attributes. This isn't so bad (it makes accessing deep into a node tree easy), however I always have to re-learn if `[]` accesses children or attributes after I've been away from XML parsing for a bit. With Smelly there is no amibguity, it's just `.children[]` and `.attributes[]`.
+Nim's std/xmltree uses `[]` on a node to access it's children and uses `.attr[]` to access attributes. This isn't so bad (it makes accessing deep into a node tree easy), however I always have to re-learn if `[]` accesses children or attributes after I've been away from XML parsing for a bit. With Smelly there is no amibguity, it's just `.children[]` and `.attributes[]`.
 
 Even more annoyingly, Nim's std/xml considers every single entity encoding (eg `&lt;`) to be independent elements in the node tree instead of just a text encoding detail.
 
