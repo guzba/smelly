@@ -2,4 +2,4 @@ nimTitle	smelly	smelly.html	module src/smelly		0
 nim	XmlElement	smelly.html#XmlElement	type XmlElement		17
 nim	`$`	smelly.html#$,XmlElement	proc `$`(element: XmlElement): string		56
 nim	startsWithAsciiIgnoreCase	smelly.html#startsWithAsciiIgnoreCase,openArray[char],openArray[char]	proc startsWithAsciiIgnoreCase(a, b: openArray[char]): bool		74
-nim	parseXml	smelly.html#parseXml,string	proc parseXml(input: string): XmlElement		457
+nim	parseXml	smelly.html#parseXml,string	proc parseXml(input: string): XmlElement		461
