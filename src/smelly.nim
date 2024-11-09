@@ -1,7 +1,7 @@
-import unicody, smelly/xmlattributes#, std/bitops
+import unicody, smelly/xmlattributes, std/bitops
 
-# when defined(amd64):
-#   import nimsimd/sse2
+when defined(amd64):
+  import nimsimd/sse2
 
 from std/strutils import find, toLowerAscii, cmpIgnoreCase
 
@@ -105,23 +105,30 @@ proc skipWhitespace(
   if required and start == i:
     missingRequiredWhitespace(input, i)
 
+from std/strutils import toBin
+
 proc decodeCharData(input: string, start, len: int): string =
   var offset = start
   while offset < start + len:
 
-    # when defined(amd64):
-    #   while offset + 16 < start + len:
-    #     let
-    #       tmp = mm_loadu_si128(input[offset].addr)
-    #       mask = mm_movemask_epi8(mm_cmpeq_epi8(tmp, mm_set1_epi8('&'.uint8)))
-    #     if mask == 0:
-    #       let z = result.len
-    #       result.setLen(z + 16)
-    #       mm_storeu_si128(result[z].addr, tmp)
-    #       offset += 16
-    #     else:
-    #       offset += firstSetBit(mask) - 1
-    #       break
+    when defined(amd64):
+      while offset + 16 < start + len:
+        let
+          tmp = mm_loadu_si128(input[offset].addr)
+          mask = mm_movemask_epi8(mm_cmpeq_epi8(tmp, mm_set1_epi8('&'.uint8)))
+        if mask == 0:
+          let z = result.len
+          result.setLen(z + 16)
+          mm_storeu_si128(result[z].addr, tmp)
+          offset += 16
+        else:
+          let n = countTrailingZeroBits(mask)
+          if n > 0:
+            let z = result.len
+            result.setLen(z + n)
+            copyMem(result[z].addr, input[offset].addr, n)
+            offset += n
+          break
 
     if input[offset] == '&':
       let x = input.find(';', start = offset + 1)
