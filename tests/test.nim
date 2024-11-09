@@ -28,21 +28,15 @@
 
 import smelly
 
-block:
-  let root = parseXml("<thing>a<b></b>c</thing>")
-  echo root
+# block:
+#   let root = parseXml("<thing>a<b></b>c</thing>")
+#   echo root
 
 
 
 
 # echo parseXml(readFile("tests/data/ellipse01.svg"))
-# let root = parseXml(readFile("tests/data/feed.xml"))
-# echo root[0][4][1].tag
-# echo root[0][4][1].len
-
-
-
-
+echo parseXml(readFile("tests/data/feed.xml"))
 # echo parseXml(readFile("tests/data/apkmirror.xml"))
 
 # block:
