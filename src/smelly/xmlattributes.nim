@@ -12,7 +12,7 @@ else: # Older versions
   converter toBase*(params: XmlAttributes): seq[(string, string)] =
     params.distinctBase
 
-proc `[]`*(attributes: XmlAttributes, key: string): string =
+proc `[]`*(attributes: XmlAttributes, key: string): lent string =
   ## Gets the attribute value for the key.
   ## Returns an empty string if key is not present.
   ## Use a for loop if there may be multiple values for the same key.
@@ -39,7 +39,10 @@ proc add*(attributes: var XmlAttributes, params: XmlAttributes) =
     attributes.add((k, v))
 
 proc getOrDefault*(attributes: XmlAttributes, key, default: string): string =
-  if key in attributes: attributes[key] else: default
+  if key in attributes:
+    attributes[key]
+  else:
+    default
 
 proc `$`*(attributes: XmlAttributes): string =
   $toBase(attributes)

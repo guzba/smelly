@@ -105,8 +105,6 @@ proc skipWhitespace(
   if required and start == i:
     missingRequiredWhitespace(input, i)
 
-from std/strutils import toBin
-
 proc decodeCharData(input: string, start, len: int): string =
   var offset = start
   while offset < start + len:
