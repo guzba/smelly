@@ -2,6 +2,8 @@ import unicody, smelly/xmlattributes, std/bitops
 
 when defined(amd64):
   import nimsimd/sse2
+elif defined(arm64):
+  import nimsimd/neon
 
 from std/strutils import find, toLowerAscii, cmpIgnoreCase
 
@@ -121,6 +123,26 @@ proc decodeCharData(input: string, start, len: int): string =
           offset += 16
         else:
           let n = countTrailingZeroBits(mask)
+          if n > 0:
+            let z = result.len
+            result.setLen(z + n)
+            copyMem(result[z].addr, input[offset].addr, n)
+            offset += n
+          break
+    elif defined(arm64):
+      while offset + 16 < start + len:
+        let
+          v0 = vld1q_u8(input[offset].addr)
+          v1 = vceqq_u8(v0, vmovq_n_u8('&'.uint8))
+          v2 = vshrn_n_u16(vreinterpretq_u16_u8(v1), 4)
+          v3 = vget_lane_u64(vreinterpret_u64_u8(v2), 0)
+        if v3 == 0:
+          let z = result.len
+          result.setLen(z + 16)
+          vst1q_u8(result[z].addr, v0)
+          offset += 16
+        else:
+          let n = countTrailingZeroBits(v3) div 4
           if n > 0:
             let z = result.len
             result.setLen(z + n)

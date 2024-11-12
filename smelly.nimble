@@ -1,4 +1,4 @@
-version     = "0.1.3"
+version     = "0.1.4"
 author      = "Ryan Oldenburg"
 description = "Sometimes you have to parse XML"
 license     = "MIT"
