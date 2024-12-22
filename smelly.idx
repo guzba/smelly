@@ -4,4 +4,4 @@ nim	TextNode	smelly.html#TextNode	XmlNodeKind.TextNode		29
 nim	XmlNodeKind	smelly.html#XmlNodeKind	enum XmlNodeKind		29
 nim	XmlNode	smelly.html#XmlNode	type XmlNode		32
 nim	`$`	smelly.html#$,XmlNode	proc `$`(node: XmlNode): string		41
-nim	parseXml	smelly.html#parseXml,string	proc parseXml(input: string): XmlNode		466
+nim	parseXml	smelly.html#parseXml,openArray[char]	proc parseXml(input: openArray[char]): XmlNode		466
