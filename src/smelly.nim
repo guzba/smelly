@@ -97,7 +97,7 @@ proc startsWithXmlDeclaration(s: openarray[char]): bool =
     true
 
 proc skipWhitespace(
-  input: string,
+  input: openarray[char],
   i: var int,
   required: static bool = false
 ) =
@@ -107,7 +107,7 @@ proc skipWhitespace(
   if required and start == i:
     missingRequiredWhitespace(input, i)
 
-proc decodeCharData(input: string, start, len: int): string =
+proc decodeCharData(input: openarray[char], start, len: int): string =
   var offset = start
   while offset < start + len:
 
@@ -202,7 +202,7 @@ proc decodeCharData(input: string, start, len: int): string =
       result.add input[offset]
       inc offset
 
-proc readCdata(input: string, i: var int): string =
+proc readCdata(input: openarray[char], i: var int): string =
   if i + cdataStart.len > input.len:
     eof()
   elif not equalMem(input[i].addr, cdataStart.cstring, 9):
@@ -210,7 +210,7 @@ proc readCdata(input: string, i: var int): string =
 
   i += cdataStart.len
 
-  let e = strutils.find(input, cdataEnd, start = i)
+  let e = input.find(cdataEnd, start = i)
   if e == -1:
     eof()
 
@@ -220,7 +220,7 @@ proc readCdata(input: string, i: var int): string =
 
   i = e + cdataEnd.len
 
-proc readValue(input: string, i: var int): string =
+proc readValue(input: openarray[char], i: var int): string =
   if i >= input.len:
     eof()
 
@@ -237,7 +237,7 @@ proc readValue(input: string, i: var int): string =
 
   i = e + 1
 
-proc readAttribute(input: string, i: var int): (string, string) =
+proc readAttribute(input: openarray[char], i: var int): (string, string) =
   let e = input.find('=', start = i)
   if e == -1:
     eof()
@@ -251,7 +251,7 @@ proc readAttribute(input: string, i: var int): (string, string) =
 
   result[1] = readValue(input, i)
 
-proc skipProcessingInstruction(input: string, i: var int) =
+proc skipProcessingInstruction(input: openarray[char], i: var int) =
   if not startsWith(input.toOpenArray(i, input.high), piStart):
     badXml(input, i)
 
@@ -269,7 +269,7 @@ proc skipProcessingInstruction(input: string, i: var int) =
 
   i = q + piEnd.len
 
-proc skipComment(input: string, i: var int) =
+proc skipComment(input: openarray[char], i: var int) =
   if not startsWith(input.toOpenArray(i, input.high), commentStart):
     badXml(input, i)
 
@@ -294,7 +294,7 @@ proc skipComment(input: string, i: var int) =
     i = x + 3
     break
 
-proc skipDoctypeDefinition(input: string, i: var int) =
+proc skipDoctypeDefinition(input: openarray[char], i: var int) =
   if not startsWith(input.toOpenArray(i, input.high), doctypeStart):
     badXml(input, i)
 
@@ -308,7 +308,7 @@ proc skipDoctypeDefinition(input: string, i: var int) =
 
   i = x + 1
 
-proc skipProlog(input: string, i: var int) =
+proc skipProlog(input: openarray[char], i: var int) =
   if not startsWithXmlDeclaration(input.toOpenArray(i, input.high)):
     # Optional
     return
@@ -368,7 +368,7 @@ proc skipProlog(input: string, i: var int) =
     else:
       break
 
-proc parseNode(input: string, i: var int, depth: int): XmlNode =
+proc parseNode(input: openarray[char], i: var int, depth: int): XmlNode =
   const maxDepth = 100
   if depth > maxDepth:
     error("Child node depth exceeded max of " & $maxDepth)
@@ -463,7 +463,7 @@ proc parseNode(input: string, i: var int, depth: int): XmlNode =
       children.add(XmlNode(kind: TextNode, content: decodeCharData(input, i, x - i)))
       i = x
 
-proc parseXml*(input: string): XmlNode {.gcsafe.} =
+proc parseXml*(input: openarray[char]): XmlNode {.gcsafe.} =
   let invalidAt = validateUtf8(input)
   if invalidAt != -1:
     error("Invalid UTF-8 character at " & $invalidAt)
