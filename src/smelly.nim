@@ -5,7 +5,7 @@ when defined(amd64):
 elif defined(arm64):
   import nimsimd/neon
 
-from std/strutils import find, toLowerAscii, cmpIgnoreCase
+from std/strutils import toLowerAscii, cmpIgnoreCase
 
 export xmlattributes
 
@@ -210,7 +210,7 @@ proc readCdata(input: string, i: var int): string =
 
   i += cdataStart.len
 
-  let e = input.find(cdataEnd, start = i)
+  let e = strutils.find(input, cdataEnd, start = i)
   if e == -1:
     eof()
 
